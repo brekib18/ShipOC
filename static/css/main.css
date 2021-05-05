@@ -23,10 +23,11 @@
 }
 
 .container2 {
-    display: inline-block;
+
 }
 
-.product_box {
-    background-color: azure;
+.products_box {
+    display: inline-block;
+    background-color: red;
     border: 10px solid black;
 }
