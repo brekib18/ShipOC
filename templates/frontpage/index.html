@@ -9,28 +9,38 @@
     </div>
 
     <div class = "container2">
-        <div class = "products_box">
-            <div class = "products_name">
-                Morgunkorn
+        <a href="{% url 'cereal-index' %}">
+            <div class = "products_box">
+                <div class = "products_name">
+                    Morgunkorn
+                </div>
             </div>
-        </div>
+        </a>
 
+        <a href="{% url 'books-index' %}">
         <div class = "products_box">
                 <div class = "products_name">
                     Bækur
                 </div>
             </div>
+            </a>
 
+        <a href = "{% url 'clothes-index' %}">
         <div class = "products_box">
             <div class = "products_name">
                 Föt
             </div>
         </div>
+            </a>
+
+        <a href = "{% url 'accessories-index' %}">
         <div class = "products_box">
             <div class = "products_name">
                 Fylgihlutir
             </div>
         </div>
+            </a>
+
 
     </div>
 

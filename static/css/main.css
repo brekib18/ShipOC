@@ -29,5 +29,5 @@
 .products_box {
     display: inline-block;
     background-color: red;
-    border: 10px solid black;
+    border: 1px solid black;
 }
