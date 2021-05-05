@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'accessories.apps.AccessoriesConfig',
+    'books.apps.BooksConfig',
+    'cereal.apps.CerealConfig',
+    'clothes.apps.ClothesConfig'
 ]
 
 MIDDLEWARE = [
