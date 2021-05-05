@@ -20,6 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('morgunkorn/', include('cereal.urls')),
     path('fylgihlutir/', include('accessories.urls')),
-    path('föt/', include('merch.urls')),
-    path('bækur/', include('books.urls'))
+    path('fot/', include('clothes.urls')),
+    path('bakur/', include('books.urls'))
 ]
