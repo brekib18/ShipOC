@@ -21,3 +21,12 @@
     background-color: blue;
     border: 10px solid black;
 }
+
+.container {
+    display: inline-block;
+}
+
+.product_box {
+    background-color: azure;
+    border: 10px solid black; ;
+}
