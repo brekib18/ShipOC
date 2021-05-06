@@ -12,5 +12,5 @@ class Cereal(models.Model):
 
 class CerealImage(models.Model):
     image = models.CharField(max_length=9999)
-    candy = models.ForeignKey(Cereal, on_delete=models.CASCADE())
+    candy = models.ForeignKey(Cereal, on_delete=models.CASCADE)
 # Create your models here.
