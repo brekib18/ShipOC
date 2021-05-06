@@ -1,4 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class = "cereal"><h1>Morgunkorn</h1></div>
+    <div class = "cereal">
+        <h1>Morgunkorn</h1>
+    </div>
+
+    {% for cereal in cereals %}
+        {% if cereal.price > 5 %}
+            <p>Expensive!</p>
+        {% else %}
+            <p>Not so expensive</p>
+        {% endif %}
+        <h4>{{ cereal.name }}</h4>
+        <p>{{ cereal.price }}$</p>
+    {% endfor %}
+
 {% endblock %}
