@@ -32,3 +32,10 @@
     border: 1px solid black;
 }
 
+#chat_balloon{
+    display: inline-block;
+    float: right;
+    margin-top: 15px;
+}
+
+
