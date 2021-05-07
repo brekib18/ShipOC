@@ -32,6 +32,11 @@
     border: 1px solid black;
 }
 
+.right_navbar_footer{
+    display: inline-block;
+    float: right;
+}
+
 #chat_balloon{
     display: inline-block;
     float: right;
