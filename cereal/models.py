@@ -7,7 +7,6 @@ class Cereal(models.Model):
     description = models.CharField(max_length=255,blank=True)
     category = models.ForeignKey(CerealCategory,on_delete=models.CASCADE)
     price = models.FloatField()
-    on_sale = models.BooleanField()
 
 class CerealImage(models.Model):
     image = models.CharField(max_length=9999)

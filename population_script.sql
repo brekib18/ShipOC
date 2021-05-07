@@ -4,9 +4,9 @@ insert into category(name) values ('Föt');
 insert into category(name) values ('Fylgihlutir');
 
 
-insert into cereal_category(name) values ('Vegan');
-insert into cereal_category(name) values ('Sætt');
-insert into cereal_category(name) values ('Sykurlítið');
+insert into cereal_cerealcategory(name) values ('Vegan');
+insert into cereal_cerealcategory(name) values ('Sætt');
+insert into cereal_cerealcategory(name) values ('Sykurlítið');
 
 insert into cereal_cereal(name, description, price, category_id, cereal_category_id) values ('Cocoa Puffs','Hver elskar ekki Cocoa Puffs? Hrikalega bragðgott.','650',1,2);
 insert into cereal_cereal(name, description, price, category_id, cereal_category_id) values ('Cheerios','Eitt allra vinsælasta morgunkorn allra tíma!','420',1,3);
