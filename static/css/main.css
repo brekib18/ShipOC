@@ -42,13 +42,18 @@
     float: right;
 }
 
-#chat_balloon{
-    display: inline-block;
-    float: right;
-    margin-top: 15px;
+#nav_down_left{
+    margin: 10px;
+    padding: 10px;
+}
+
+#nav_down_right{
+    margin: 10px;
+    padding: 10px;
 }
 
 
+<<<<<<< Updated upstream
 .products_name{
     text-align: center;
     font-size: 25px;
@@ -59,3 +64,7 @@
 a {
     color: black;
 }
+=======
+
+
+>>>>>>> Stashed changes
