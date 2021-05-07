@@ -23,6 +23,7 @@
 }
 
 .container2 {
+    margin-top: 60px;
 
 }
 
@@ -30,6 +31,10 @@
     display: inline-block;
     background-color: lightblue;
     border: 1px solid black;
+    width: 20%;
+    height: 400px;
+    margin: 5px;
+
 }
 
 .right_navbar_footer{
@@ -44,3 +49,13 @@
 }
 
 
+.products_name{
+    text-align: center;
+    font-size: 25px;
+    font-color: black;
+    margin-top: 10px;
+}
+
+a {
+    color: black;
+}
