@@ -1,0 +1,1 @@
+INSERT INTO cereal_cereal (name) VALUES ('cheerios')
