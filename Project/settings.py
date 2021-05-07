@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'accessories.apps.AccessoriesConfig',
     'books.apps.BooksConfig',
     'cereal.apps.CerealConfig',
-    'clothes.apps.ClothesConfig'
+    'clothes.apps.ClothesConfig',
+    'frontpage.apps.FrontpageConfig'
 ]
 
 MIDDLEWARE = [
