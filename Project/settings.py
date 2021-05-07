@@ -83,11 +83,11 @@ WSGI_APPLICATION = 'Project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'shipOC-db',
-        'USER':'shipOC-db-user',
-        'PASSWORD':'ABC12345',
-        'HOST':'34.123.129.175',
-        'PORT':'5432'
+        'NAME': 'shipOC2',
+        'USER': 'shipOC2-db-user',
+        'PASSWORD': 'ABC12345',
+        'HOST': '34.123.129.175',
+        'PORT': '5432'
     }
 }
 

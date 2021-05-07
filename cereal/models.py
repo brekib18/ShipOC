@@ -1,7 +1,10 @@
 from django.db import models
 from frontpage.models import Category
+
+
 class CerealCategory(models.Model):
     name = models.CharField(max_length=255)
+
 
 class Cereal(models.Model):
     name = models.CharField(max_length=255)
@@ -10,6 +13,10 @@ class Cereal(models.Model):
     price = models.FloatField()
     on_sale = models.BooleanField()
     category_id = models.ForeignKey(Category, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
+
 
 class CerealImage(models.Model):
     image = models.CharField(max_length=9999)
