@@ -16,4 +16,4 @@ class Accessories(models.Model):
 
 class AccessoriesImage(models.Model):
     image = models.CharField(max_length=9999)
-    accessory = models.ForeignKey(Accessories,on_delete=models.CASCADE)
+    accessories = models.ForeignKey(Accessories,on_delete=models.CASCADE)
