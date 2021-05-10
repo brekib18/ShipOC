@@ -10,6 +10,9 @@ class Books(models.Model):
     category = models.ForeignKey(Category,on_delete=models.CASCADE)
     price = models.IntegerField()
 
+    def __str__(self):
+        return self.name
+
 class BooksImage(models.Model):
     image = models.CharField(max_length=9999)
     book = models.ForeignKey(Books,on_delete=models.CASCADE)
