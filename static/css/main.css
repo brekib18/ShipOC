@@ -53,7 +53,7 @@
 }
 
 
-<<<<<<< Updated upstream
+
 .products_name{
     text-align: center;
     font-size: 25px;
@@ -81,8 +81,15 @@ a {
 }
 
 .container{
-    height: 200px;
+    margin-bottom: 20px;
+}
+
+.cereals{
+    margin-bottom: 100px;
 }
 
 
->>>>>>> Stashed changes
+
+
+
+
