@@ -1,6 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class = "accessories">
-        <h2>weeeelllccooomeee fylgihlutir</h2>
+
+    <h1 class="red">Fylgihlutir</h1>
+
+      <div class="search_bar">
+      <input type="search" class="form-control rounded" placeholder="Ég er að leita að.." aria-label="Search"
+        aria-describedby="search-addon" />
+      <span class="input-group-text border-0" id="search-addon">
+        <i class="fas fa-search"></i>
+      </span>
     </div>
+
+    <div class="accessories">
+        {% for accessory in accessories %}
+            {% include 'accessories/single_accessories.html' with accessories=accessories %}
+        {% endfor %}
+    </div>
+
+
 {% endblock %}

@@ -55,11 +55,11 @@ insert into clothes_clothesimage(image, clothes_id) values ('https://cdn.shopify
 
 -- accessories
 
-insert into clothes_clothes(name, description, price, category_id) values ('Cheerios mjólkurkanna','Flott Cheerios mjólkurkanna sem tekur 1L.',2.650,40);
-insert into clothes_clothes(name, description, price, category_id) values ('Cheerios','Mjúkur og hlýr bolur með Cheerios logo-inu','2.150',39);
-insert into clothes_clothes(name, description, price, category_id) values ('Apple Jacks','Nýtískuleg og flott peysa','1.999',39);
+insert into accessories_accessories(name, description, price, category_id) values ('Cheerios mjólkurkanna','Flott Cheerios mjólkurkanna sem tekur 1L.',2.650,40);
+insert into accessories_accessories(name, description, price, category_id) values ('Cocoa puffs sokkar','Mjúkir og hlýir sokkar með Cocoa puffs logo-inu','2.150',39);
+insert into accessories_accessories(name, description, price, category_id) values ('Frosted flakes sokkar','Frábærir og góðir sokkar','1.999',39);
 
 
-insert into clothes_clothesimage(image, clothes_id) values ('https://i.ebayimg.com/images/g/dEMAAOSwBxBc1uX1/s-l400.jpg',1);
-insert into clothes_clothesimage(image, clothes_id) values ('https://img1.pnghut.com/7/12/19/8NvYLZhab5/tshirt-hood-clothing-bluza-sweater.jpg',2);
-insert into clothes_clothesimage(image, clothes_id) values ('https://cdn.shopify.com/s/files/1/0670/6431/products/33840_2048x2048.png?v=1571153389',3);
+insert into accessories_accessoriesimage(image, clothes_id) values ('https://i.ebayimg.com/images/g/dEMAAOSwBxBc1uX1/s-l400.jpg',1);
+insert into accessories_accessoriesimage(image, clothes_id) values ('https://images-na.ssl-images-amazon.com/images/I/61-lBAxumAL._UX569_.jpg',2);
+insert into accessories_accessoriesimage(image, clothes_id) values ('https://cdn.shopify.com/s/files/1/0317/1509/products/FF_BACK.jpg',3);
