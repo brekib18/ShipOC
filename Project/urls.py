@@ -23,5 +23,6 @@ urlpatterns = [
     path('fylgihlutir/', include('accessories.urls')),
     path('fot/', include('clothes.urls')),
     path('bakur/', include('books.urls')),
-    path('upplysingar/', include('info.urls'))
+    path('upplysingar/', include('info.urls')),
+    path('hafasamband/', include('contact.urls'))
 ]
