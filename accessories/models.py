@@ -1,19 +1,20 @@
 
 # Create your models here.
 from django.db import models
+from frontpage.models import Category
 
 
-class AccsessoryCategory(models.Model):
+class AccessoriesCategory(models.Model):
     name = models.CharField(max_length=255)
 
 
 class Accessories(models.Model):
     name = models.CharField(max_length=255)
     description = models.CharField(max_length=255,blank=True)
-    category = models.ForeignKey(AccsessoryCategory,on_delete=models.CASCADE)
+    category = models.ForeignKey(Category,on_delete=models.CASCADE)
     price = models.IntegerField()
 
 
-class AccerssoryImage(models.Model):
+class AccessoriesImage(models.Model):
     image = models.CharField(max_length=9999)
-    accsessory = models.ForeignKey(Accessories,on_delete=models.CASCADE)
+    accessories = models.ForeignKey(Accessories,on_delete=models.CASCADE)

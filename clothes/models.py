@@ -1,11 +1,13 @@
 from django.db import models
+from frontpage.models import Category
+
 class ClothesCategory(models.Model):
     name = models.CharField(max_length=255)
 
 class Clothes(models.Model):
     name = models.CharField(max_length=255)
     description = models.CharField(max_length=255,blank=True)
-    category = models.ForeignKey(ClothesCategory,on_delete=models.CASCADE)
+    category = models.ForeignKey(Category,on_delete=models.CASCADE)
     price = models.FloatField()
 
 class ClothesImage(models.Model):
