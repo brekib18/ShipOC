@@ -3,7 +3,7 @@
 from django.db import models
 
 
-class AccsessoryCategory(models.Model):
+class AccessoriesCategory(models.Model):
     name = models.CharField(max_length=255)
 
 
@@ -14,6 +14,6 @@ class Accessories(models.Model):
     price = models.IntegerField()
 
 
-class AccerssoryImage(models.Model):
+class AccessoriesImage(models.Model):
     image = models.CharField(max_length=9999)
-    accsessory = models.ForeignKey(Accessories,on_delete=models.CASCADE)
+    accessory = models.ForeignKey(Accessories,on_delete=models.CASCADE)
