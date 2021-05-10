@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,3 +9,15 @@
 
 </body>
 </html>
+
+<div class="well_product">
+    <a href="/fot/{{ clothes.id }}">
+        <img class="product-img" src="{{ clothe.clothesimage_set.first.image }}"/>
+        <h4>{{ clothe.name }}</h4>
+        <p>{{ clothe.price }} kr.</p>
+
+        <p>Her kemur mynd af hjarta</p>
+        <button class = "shopping_cart"><p>&#128722</p></button>
+    </a>
+</div>
+
