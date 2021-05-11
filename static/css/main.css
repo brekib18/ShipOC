@@ -116,7 +116,12 @@ a {
     width: 30px;
 }
 
-
+#chat_baloon{
+    display: inline-block;
+    float: right;
+    padding-top: 10px;
+    padding-right: 20px;
+}
 
 .chat{
     background-color: white;
