@@ -11,7 +11,7 @@ $(document).ready(function(){
                 var newHtml = res.data.map(d => {
                     return `<div class="well candy">
                             <a href="/fot/${d.id}">
-                                <img class="clothes-img" src="${d.firstImage}" />
+                                <img class="product-img" src="${d.firstImage}" />
                                 <h4>${d.name}</h4>
                                 <p>${d.description}</p>
                             </a>
