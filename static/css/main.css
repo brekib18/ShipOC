@@ -170,13 +170,14 @@ a {
 /*    background-color: gray;*/
 /*}*/
 
+
 .hyplinks_navdown:hover {
   color: dodgerblue;
 }
 
 
 .sidenav {
-  width: 130px;
+  width: 160px;
   position: fixed;
   z-index: 1;
   top: 100px;
@@ -217,6 +218,6 @@ a {
 }
 
 .main_products {
-    margin-left: 90px;
+    margin-left: 110px;
 }
 
