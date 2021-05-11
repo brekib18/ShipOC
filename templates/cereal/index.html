@@ -29,16 +29,21 @@
 
 
 
-     <div class="sidenav">
-     <p class="sidenames"> Vöruflokkar: </p>
-      <button class="btn" onclick=""> Sykurlítið </button>
-      <button class="btn" onclick=""> Sætt </button>
-      <button class="btn" onclick=""> Vegan </button>
-      <p class="sidenames"> Raða eftir: </p>
-      <button class="btn" onclick=""> Verði - Frá lægsta </button>
-      <button class="btn" onclick=""> Verði - Frá hæsta </button>
-      <button class="btn" onclick=""> Stafrófsröð </button>
-     </div>
+    <div class="sidenav">
+        <p class="sidenames"> Vöruflokkar: </p>
+        <div class="option_btns">
+            <INPUT TYPE="Radio" Name="categories" Value="sugar_low" onclick=""> Sykurlítið <br>
+            <INPUT TYPE="Radio" Name="categories" Value="sugar_high" onclick=""> Sætt <br>
+            <INPUT TYPE="Radio" Name="categories" Value="vegan" onclick=""> Vegan
+        </div>
+
+        <p class="sidenames"> Raða eftir: </p>
+        <div class="option_btns">
+            <INPUT TYPE="Radio" Name="order" Value="alphabetic" onclick=""> Stafrófsröð <br>
+            <INPUT TYPE="Radio" Name="order" Value="price_lw" onclick=""> Verði - frá lægsta<br>
+            <INPUT TYPE="Radio" Name="order" Value="price_high" onclick=""> Verði - frá hæsta
+        </div>
+    </div>
 
 
 {% endblock %}
