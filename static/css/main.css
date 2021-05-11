@@ -234,3 +234,19 @@ a {
 .book_image{
     height: 200px;
 }
+
+.login{
+    background-color: white;
+    display: inline-block;
+    position: absolute;
+    bottom: 200px;
+    left: 450px;
+    border: 4px solid black;
+    width: 400px;
+    text-align: center;
+    padding: 15px;
+}
+
+#login_button{
+    margin: 20px;
+}
