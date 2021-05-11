@@ -1,7 +1,59 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div>innskraningarsida</div>
+
+  <div class="search_bar">
+      <input type="search" class="form-control rounded" placeholder="Ég er að leita að.." aria-label="Search"
+        aria-describedby="search-addon" />
+      <span class="input-group-text border-0" id="search-addon">
+        <i class="fas fa-search"></i>
+      </span>
+    </div>
+
+    <div class = "container2">
+        <a href="{% url 'cereal-index' %}">
+            <div class = "products_box">
+                <div class = "products_name">
+                    Morgunkorn
+                </div>
+            </div>
+        </a>
+
+        <a href="{% url 'books-index' %}">
+        <div class = "products_box">
+                <div class = "products_name">
+                    Bækur
+                </div>
+            </div>
+            </a>
+
+        <a href = "{% url 'clothes-index' %}">
+        <div class = "products_box">
+            <div class = "products_name">
+                Föt
+            </div>
+        </div>
+            </a>
+
+        <a href = "{% url 'accessories-index' %}">
+        <div class = "products_box">
+            <div class = "products_name">
+                Fylgihlutir
+            </div>
+        </div>
+            </a>
+
+
+    </div>
+
+    <div class = "chat">
+        <h1>Innskráning</h1>
+        <div>Notendanafn: </div>
+        <input type="text">
+        <br>
+        <div>Lykilorð: </div>
+        <input type="text">
+    </div>
 
 
 {% endblock %}
