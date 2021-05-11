@@ -225,3 +225,8 @@ a {
     margin-left: 110px;
 }
 
+.option_btns {
+    margin-left: 10px;
+    display: block;
+    margin-bottom: 20px;
+}
