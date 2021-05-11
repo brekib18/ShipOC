@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
     <h1>{{ accessories.name }}</h1>
+    <h2>Nánari upplýsingar</h2>
     <p>{{ accessories.description }}</p>
     <p>{{ accessories.price }} kr.</p>
     {% for accessories_image in accessories.accessoriesimage_set.all %}
