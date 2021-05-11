@@ -230,3 +230,7 @@ a {
     display: block;
     margin-bottom: 20px;
 }
+
+.book_image{
+    height: 200px;
+}
