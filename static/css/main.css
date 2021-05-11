@@ -116,3 +116,6 @@ a {
     width: 30px;
 }
 
+.hyplinks_navdown:hover {
+  color: dodgerblue;
+}
