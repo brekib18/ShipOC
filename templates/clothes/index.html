@@ -4,13 +4,13 @@
     <div class="main_products">
         <h1 class="red">Föt</h1>
 
-          <div class="search_bar">
-          <input type="search" class="form-control rounded" placeholder="Ég er að leita að.." aria-label="Search"
-            aria-describedby="search-addon" />
-          <span class="input-group-text border-0" id="search-addon">
-            <i class="fas fa-search"></i>
-          </span>
+    <div class="input-group">
+        <input type="search" class="form-control" id="search-box2" placeholder="Ég er að leita að..." />
+        <div class="input-group-btn">
+            <button type="button" id="search-btn2" class="btn btn-default">Leita</button>
         </div>
+    </div>
+
 
         <div class="clothes">
             {% for clothe in clothes %}

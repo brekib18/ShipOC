@@ -2,10 +2,21 @@ from django.shortcuts import render
 from django.shortcuts import render
 from books.models import Books
 from django.shortcuts import get_object_or_404
+from django.http import JsonResponse
+
 
 def index(request):
-    context = {'books': Books.objects.all().order_by("name")}
-    return render(request, 'books/index.html',context)
+    if 'search_filter' in request.GET:
+        search_filter = request.GET['search_filter']
+        books = [{
+            'id': x.id,
+            'name': x.name,
+            'description': x.description,
+            'firstImage': x.booksimage_set.first().image
+        } for x in Books.objects.filter(name__icontains=search_filter)]
+        return JsonResponse({'data': books})
+    context = {'books': Books.objects.all().order_by('name')}
+    return render(request, 'books/index.html', context)
 
 
 def get_book_by_id(request,id):
