@@ -27,5 +27,6 @@ urlpatterns = [
     path('hafasamband/', include('contact.urls')),
     path('spjall/',include('chat.urls')),
     path('uppahalds/',include('favorites.urls')),
-    path('karfa/',include('cart.urls'))
+    path('karfa/',include('cart.urls')),
+    path('innskraning/',include('login.urls'))
 ]
