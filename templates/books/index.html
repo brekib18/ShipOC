@@ -11,11 +11,15 @@
       </span>
     </div>
 
+
+
     <div class="books">
         {% for book in books %}
             {% include 'books/single_book.html' with book=book %}
         {% endfor %}
     </div>
+
+
 
 
 {% endblock %}

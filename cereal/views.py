@@ -19,3 +19,4 @@ def get_cereal_by_id(request,id):
     return render(request,'cereal/cereal_details.html',{
         'cereal': get_object_or_404(Cereal, pk=id)
     })
+

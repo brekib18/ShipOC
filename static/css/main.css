@@ -116,6 +116,55 @@ a {
     width: 30px;
 }
 
+
+
+.chat{
+    background-color: white;
+    display: inline-block;
+    position: absolute;
+    bottom: 200px;
+    left: 450px;
+    border: 4px solid black;
+    height: 500px;
+    width: 400px;
+}
+
+.chat_header{
+    border-bottom: 2px solid black;
+    background-color: lightblue;
+    text-align: center;
+    padding: 10px;
+    font-size: 23px;
+}
+
+.chat_footer{
+    background-color: lightgray;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+
+.chat_input{
+    width: 100%;
+    background-color: lightgray;
+    padding: 10px;
+    border: 0px;
+    border-top: 2px solid black;
+}
+
+.chat_message{
+    background-color: lightgray;
+    width: 50%;
+    margin: 10px;
+    border-radius: 20px;
+    padding: 10px;
+}
+/*.chat_footer{*/
+/*    position: absolute;*/
+/*    bottom: 0px;*/
+/*    background-color: gray;*/
+/*}*/
+
 .hyplinks_navdown:hover {
   color: dodgerblue;
 }
