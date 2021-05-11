@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>{{ book.name }}</h1>
+    <p>{{ book.description }}</p>
+    <p>{{ book.price }} kr.</p>
+    {% for book_image in book.booksimage_set.all %}
+        <img src="{{ book_image.image }}" class="product-img"/>
+    {% endfor %}
+{% endblock %}
