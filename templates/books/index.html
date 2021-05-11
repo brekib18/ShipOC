@@ -2,7 +2,7 @@
 {% block content %}
 
     <div class="main_products">
-        <h1 class="red">Baekur</h1>
+        <h1 class="red">Bækur</h1>
 
           <div class="search_bar">
           <input type="search" class="form-control rounded" placeholder="Ég er að leita að.." aria-label="Search"
@@ -12,20 +12,20 @@
           </span>
         </div>
 
-<<<<<<< Updated upstream
+
 
 
     <div class="books">
         {% for book in books %}
             {% include 'books/single_book.html' with book=book %}
         {% endfor %}
-=======
+
         <div class="books">
             {% for book in books %}
                 {% include 'books/single_book.html' with book=book %}
             {% endfor %}
         </div>
->>>>>>> Stashed changes
+
     </div>
 
 
