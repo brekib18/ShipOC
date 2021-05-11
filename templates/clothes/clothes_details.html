@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>{{ clothes.name }}</h1>
+    <p>{{ clothes.description }}</p>
+    <p>{{ clothes.price }} kr.</p>
+    {% for clothesimage in clothes.clothesimage_set.all %}
+        <img src="{{ clothes_image.image }}" class="product-img"/>
+    {% endfor %}
+{% endblock %}
