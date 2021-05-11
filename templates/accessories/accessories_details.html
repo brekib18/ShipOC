@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
     <h1>{{ accessories.name }}</h1>
-    <h2>Nánari upplýsingar</h2>
+    <h5>Lýsing:</h5>
     <p>{{ accessories.description }}</p>
     <p>{{ accessories.price }} kr.</p>
     {% for accessories_image in accessories.accessoriesimage_set.all %}
         <img src="{{ accessories_image.image }}" class="product-img"/>
     {% endfor %}
+    <button>Bæta í körfu</button>
+    <button>Bæta á uppáhalds lista</button>
 {% endblock %}

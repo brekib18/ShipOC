@@ -3,10 +3,6 @@
     border: 10px solid black;
 }
 
-
-
-
-
 .frontpage {
     background-color: blue;
     border: 10px solid black;
@@ -249,4 +245,12 @@ a {
 
 #login_button{
     margin: 20px;
+}
+
+#brefaklemma{
+    position: absolute;
+    right: 0px;
+    top: 5px;
+    height: 30px;
+    width: 30px;
 }

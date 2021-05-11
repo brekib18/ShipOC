@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
     <h1>{{ book.name }}</h1>
-    <h2>Nánari upplýsingar</h2>
+    <h5>Lýsing:</h5>
     <p>{{ book.description }}</p>
     <p>{{ book.price }} kr.</p>
     {% for book_image in book.booksimage_set.all %}
         <img src="{{ book_image.image }}" class="product-img"/>
     {% endfor %}
+    <button>Bæta í körfu</button>
+    <button>Bæta á uppáhalds lista</button>
 {% endblock %}
