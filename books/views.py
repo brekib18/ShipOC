@@ -23,3 +23,4 @@ def create_book(request):
     return render(request, 'book/create_book.html', {
         'form': form
     })
+

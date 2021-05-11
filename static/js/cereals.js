@@ -1,8 +1,3 @@
-<script>
-  var $ = jQuery.noConflict();
-</script>
-
-
 $(document).ready(function(){
     $('#search-btn').on('click', function(e){
         e.preventDefault();
