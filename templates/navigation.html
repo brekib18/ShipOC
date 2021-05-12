@@ -26,10 +26,10 @@
 
             {% if user.is.authenticated %}
                 <img src = "{{ user.profile.profile_image }}" class="profile-image"/>
-                <a href="{% url 'logout' %}"> Útskráning </a>
+                <a href="{% url 'logout' %}"> Log out </a>
             {% else  %}
-                <a href="{% url 'login' %}"> Innskráning </a>
-                <a href="{% url 'register' %}"> Nýskráning </a>
+                <a href="{% url 'login' %}"> Log in </a>
+                <a href="{% url 'register' %}"> Sign up </a>
             {% endif %}
 
 
@@ -47,15 +47,15 @@
     <div id = "nav_down_left">
         <div class = "left_navbar_footer"> Ship O' Cereal </div>
         <div class = "left_navbar_footer">
-            <a class="hyplinks_navdown" HREF="{% url 'info-index' %}"> Um okkur </a>
+            <a class="hyplinks_navdown" HREF="{% url 'info-index' %}"> About us </a>
         </div>
         <div class = "left_navbar_footer">
-            <a class="hyplinks_navdown" HREF="{% url 'contact-index' %}"> Hafa samband </a>
+            <a class="hyplinks_navdown" HREF="{% url 'contact-index' %}"> Contact us </a>
         </div>
 
 
         <div class = "right_navbar_footer">
-            Finndu okkur á samfélagsmiðlum
+            Find us on social media
             <a HREF="https://www.instagram.com" target="_blank">
                 <img class="logophotos" src="../../static/images/instaa.jpeg" alt="instagram">
             </a>
