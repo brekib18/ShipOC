@@ -17,15 +17,13 @@
             <a class="hyplinks_navdown"  HREF={% url 'chat-index' %}> <img class="logophotos" src="../../static/images/chat.png" alt="instagram"> </a>
             <a class="hyplinks_navdown"  HREF={% url 'cart-index' %}> <img class="logophotos" src="../../static/images/cart.png" alt="instagram"> </a>
             <a class="hyplinks_navdown"  HREF={% url 'favorites-index' %}> <img class="logophotos" src="../../static/images/heart.png" alt="instagram"> </a>
-            <a class="hyplinks_navdown"  HREF={% url 'login-index' %}> <img class="logophotos" src="../../static/images/account.png" alt="instagram"> </a>
-
-
-            <li><a href = "{% url 'profile' %}">Profile</a></li>
+           <!-- <a class="hyplinks_navdown"  HREF={% url 'login-index' %}> <img class="logophotos" src="../../static/images/account.png" alt="instagram"> </a> -->
 
 
 
             {% if user.is_authenticated %}
                 <img src = "{{ user.profile.profile_image }}" class="profile-image"/>
+                <a href = "{% url 'profile' %}"> Profile </a>
                 <a href="{% url 'logout' %}"> Log out </a>
             {% else  %}
                 <a href="{% url 'login' %}"> Log in </a>
