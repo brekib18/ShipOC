@@ -31,7 +31,7 @@ def create_book(request):
     else:
         form = BookCreateForm()
         # TODO: Instance new BookCreateForm()
-    return render(request, 'book/create_book.html', {
+    return render(request, 'books/create_book.html', {
         'form': form
     })
 
