@@ -42,8 +42,10 @@ INSTALLED_APPS = [
     'books.apps.BooksConfig',
     'cereal.apps.CerealConfig',
     'clothes.apps.ClothesConfig',
-    'frontpage.apps.FrontpageConfig'
+    'frontpage.apps.FrontpageConfig',
+    'user.apps.UserConfig'
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
