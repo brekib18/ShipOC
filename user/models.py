@@ -4,6 +4,7 @@ from cereal.models import Cereal
 
 # Create your models here.
 
+
 class Profile(models.Model):
     user = models.OneToOneField(User,on_delete = models.CASCADE)
     favorite_cereal = models.ForeignKey(Cereal, on_delete = models.CASCADE)
