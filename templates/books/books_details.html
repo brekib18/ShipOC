@@ -9,4 +9,7 @@
     {% endfor %}
     <button>Bæta í körfu</button>
     <button>Bæta á uppáhalds lista</button>
+
+    <a href="{% url 'delete_book' book.id %}" class="block btn btn-primary">Eyða bók</a>
+    <a href="{% url 'update_book' book.id %}" class="block btn btn-primary">Uppfæra bók</a>
 {% endblock %}

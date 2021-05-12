@@ -7,7 +7,6 @@ $(document).ready(function(){
             url: '/bakur?search_filter=' + searchText,
             type: 'GET',
             success: function(res){
-                console.log('Eg er komin hingað')
                 var newHtml = res.data.map(d => {
                     return `<div class="well candy">
                             <a href="/bakur/${d.id}">

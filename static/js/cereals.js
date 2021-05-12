@@ -1,7 +1,6 @@
 $(document).ready(function(){
     $('#search-btn').on('click', function(e){
         e.preventDefault();
-        console.log('Eg náði að ýta á takkann')
         var searchText = $('#search-box').val();
         $.ajax( {
             url: '/morgunkorn?search_filter=' + searchText,
