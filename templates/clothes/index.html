@@ -2,29 +2,29 @@
 {% block content %}
 
     <div class="main_products">
-        <h1 class="red">Föt</h1>
+        <h1 class="red">Clothes</h1>
 
     <div class="input-group">
-        <input type="search" class="form-control" id="search-box2" placeholder="Ég er að leita að..." />
+        <input type="search" class="form-control" id="search-box2" placeholder="I'm searching for..." />
         <div class="input-group-btn">
-            <button type="button" id="search-btn2" class="btn btn-default">Leita</button>
+            <button type="button" id="search-btn2" class="btn btn-default">Search</button>
         </div>
     </div>
 
 
         <div class="clothes">
             {% for clothe in clothes %}
-                {% include 'clothes/single_clothes.html' with clothes=clotes %}
+                {% include 'clothes/single_clothes.html' with clothes=clothes %}
             {% endfor %}
         </div>
     </div>
 
     <div class="sidenav">
-        <p class="sidenames"> Raða eftir: </p>
+        <p class="sidenames"> Sort by: </p>
             <div class="option_btns">
-                <INPUT TYPE="Radio" Name="order" Value="alphabetic" onclick="" checked> Stafrófsröð <br>
-                <INPUT TYPE="Radio" Name="order" Value="price_lw" onclick=""> Verði - frá lægsta<br>
-                <INPUT TYPE="Radio" Name="order" Value="price_high" onclick=""> Verði - frá hæsta
+                <INPUT TYPE="Radio" Name="order" Value="alphabetic" onclick="" checked> Alphabetical <br>
+                <INPUT TYPE="Radio" Name="order" Value="price_lw" onclick=""> Price - low to high<br>
+                <INPUT TYPE="Radio" Name="order" Value="price_high" onclick=""> Price - high to low
             </div>
     </div>
 

@@ -2,19 +2,12 @@
 {% block content %}
 
 
-  <div class="search_bar">
-      <input type="search" class="form-control rounded" placeholder="Ég er að leita að.." aria-label="Search"
-        aria-describedby="search-addon" />
-      <span class="input-group-text border-0" id="search-addon">
-        <i class="fas fa-search"></i>
-      </span>
-    </div>
 
     <div class = "container2">
         <a href="{% url 'cereal-index' %}">
             <div class = "products_box">
                 <div class = "products_name">
-                    Morgunkorn
+                    Cereals
                     <img  src="../../static/images/cereal2.png" alt="instagram">
                 </div>
             </div>
@@ -23,7 +16,7 @@
         <a href="{% url 'books-index' %}">
         <div class = "products_box">
                 <div class = "products_name">
-                    Bækur
+                    Books
                     <img class="book_image" src="../../static/images/book.png" alt="instagram">
                 </div>
             </div>
@@ -32,7 +25,7 @@
         <a href = "{% url 'clothes-index' %}">
         <div class = "products_box">
             <div class = "products_name">
-                Föt
+                Clothes
                 <img  src="../../static/images/fot.png" alt="instagram">
             </div>
         </div>
@@ -41,7 +34,7 @@
         <a href = "{% url 'accessories-index' %}">
         <div class = "products_box">
             <div class = "products_name">
-                Fylgihlutir
+                Accessories
                 <img  src="../../static/images/accs.png" alt="instagram">
             </div>
         </div>

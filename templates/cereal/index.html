@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
     <div class="main_products">
-        <h1 class="red">Morgunkorn</h1>
+        <h1 class="red">Cereals</h1>
 
     <div class="input-group">
-        <input type="search" class="form-control" id="search-box" placeholder="Ég er að leita að..." />
+        <input type="search" class="form-control" id="search-box" placeholder="I'm searching for..." />
         <div class="input-group-btn">
-            <button type="button" id="search-btn" class="btn btn-default">Leita</button>
+            <button type="button" id="search-btn" class="btn btn-default">Search</button>
         </div>
     </div>
 
@@ -30,11 +30,11 @@
             <INPUT TYPE="Radio" Name="categories" Value="vegan" onclick=""> Vegan
         </div>
 
-        <p class="sidenames"> Raða eftir: </p>
+        <p class="sidenames"> Sort by: </p>
         <div class="option_btns">
-            <INPUT TYPE="Radio" Name="order" Value="alphabetic" onclick="" checked> Stafrófsröð <br>
-            <INPUT TYPE="Radio" Name="order" Value="price_lw" onclick=""> Verði - frá lægsta<br>
-            <INPUT TYPE="Radio" Name="order" Value="price_high" onclick=""> Verði - frá hæsta
+            <INPUT TYPE="Radio" Name="order" Value="alphabetic" onclick="" checked> Alphabetical <br>
+            <INPUT TYPE="Radio" Name="order" Value="price_lw" onclick=""> Price - low to high<br>
+            <INPUT TYPE="Radio" Name="order" Value="price_high" onclick=""> Price - high to low
         </div>
     </div>
     </div>

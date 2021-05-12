@@ -19,9 +19,9 @@ from django.urls import path, include
 urlpatterns = [
     path('',include('frontpage.urls')),
     path('admin/', admin.site.urls),
-    path('morgunkorn/', include('cereal.urls')),
+    path('cereals/', include('cereal.urls')),
     path('fylgihlutir/', include('accessories.urls')),
-    path('fot/', include('clothes.urls')),
+    path('clothes/', include('clothes.urls')),
     path('baekur/', include('books.urls')),
     path('upplysingar/', include('info.urls')),
     path('hafasamband/', include('contact.urls')),
