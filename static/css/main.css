@@ -112,6 +112,17 @@ a {
     width: 30px;
 }
 
+.cartbutton {
+    height: 30px;
+    width: 30px;
+}
+
+.heartbutton {
+    height: 30px;
+    width: 30px;
+}
+
+
 #chat_baloon{
     display: inline-block;
     float: right;

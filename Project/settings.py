@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'cereal.apps.CerealConfig',
     'clothes.apps.ClothesConfig',
     'frontpage.apps.FrontpageConfig',
-    'user.apps.UserConfig'
+    'user.apps.UserConfig',
+    'cart.apps.CartConfig'
 ]
 
 

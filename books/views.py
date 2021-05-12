@@ -7,6 +7,8 @@ from books.models import Books
 from django.shortcuts import get_object_or_404, redirect
 from django.http import JsonResponse
 
+from books.models import BooksImage
+
 
 def index(request):
     if 'search_filter' in request.GET:
@@ -33,7 +35,7 @@ def create_book(request):
         form = BookCreateForm(data=request.POST)
         if form.is_valid():
             book = form.save
-            book_image = BookImage(image=request.POST['image'], book=book)
+            book_image = BooksImage(image=request.POST['image'], book=book)
             book_image.save()
             return redirect('books-index')
     else:
