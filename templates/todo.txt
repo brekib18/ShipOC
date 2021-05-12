@@ -1,0 +1,9 @@
+Raða eftir stafrófsröð og verði.
+Notandi getur valið vöruflokk.
+Leitargluggi á forsíðu??
+Bæta á uppáhalds lista og í körfu.
+Greiðsluferlið.
+Leitarsaga.
+Munur á viðmóti eftir því hvort notandi er skráður inn eða ekki.
+
+
