@@ -14,28 +14,34 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Accessories',
+            name='Cereal',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=255)),
                 ('description', models.CharField(blank=True, max_length=255)),
-                ('price', models.IntegerField()),
-                ('category', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='frontpage.category')),
+                ('price', models.FloatField()),
+                ('on_sale', models.BooleanField()),
+                ('category_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='frontpage.category')),
             ],
         ),
         migrations.CreateModel(
-            name='AccessoriesCategory',
+            name='CerealCategory',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=255)),
             ],
         ),
         migrations.CreateModel(
-            name='AccessoriesImage',
+            name='CerealImage',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('image', models.CharField(max_length=9999)),
-                ('accessories', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='accessories.accessories')),
+                ('cereal', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='cereal.cereal')),
             ],
+        ),
+        migrations.AddField(
+            model_name='cereal',
+            name='cereal_category_id',
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='cereal.cerealcategory'),
         ),
     ]
