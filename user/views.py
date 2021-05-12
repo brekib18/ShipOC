@@ -14,6 +14,7 @@ def profile(request):
             return redirect('profile')
     return render(request, 'user/profile.html', {
         'form': ProfileForm(instance=profile)
+    })
 
 def register(request):
     if request.method == "POST":
