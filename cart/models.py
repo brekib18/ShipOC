@@ -4,6 +4,8 @@ from django.db import models
 from django.db import models
 from frontpage.models import Category
 
+from auth_user import id
+
 
 class CartCategory(models.Model):
     name = models.CharField(max_length=255)
@@ -17,7 +19,7 @@ class Cart(models.Model):
     description = models.CharField(max_length=255, blank=True)
     price = models.IntegerField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    user_id = models.IntegerField()  # thetta a ekki ad vera svona, thufum ad saekja eitthvad id ur user.
+    user_id = id
 
     def __str__(self):
         return self.name
