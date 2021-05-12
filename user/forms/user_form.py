@@ -1,17 +1,13 @@
-from django.forms import ModelForm, widgets
 from django import forms
-from books.models import Books
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
 
-class UserCreateForm(ModelForm):
-    image = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': 'form-control'}))
+class SignUpForm(UserCreationForm):
+    first_name = forms.CharField(max_length=30, required=False, help_text='Optional.')
+    last_name = forms.CharField(max_length=30, required=False, help_text='Optional.')
+    email = forms.EmailField(max_length=254, help_text='Required. Inform a valid email address.')
 
     class Meta:
-        model = Books
-        exclude = ['id']
-        widgets = {
-            'name': widgets.TextInput(attrs={'class': 'form-control'}),
-            'email': widgets.TextInput(attrs={'class': 'form-control'}),
-            'password': widgets.TextInput(attrs={'class': 'form-control'}),
-            'pass': widgets.TextInput(attrs={'class': 'form-control'}),
-        }
+        model = User
+        fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2', )
