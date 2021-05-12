@@ -25,6 +25,7 @@
 
 
             {% if user.is.authenticated %}
+                <img src = "{{ user.profile.profile_image }}" class="profile-image"/>
                 <a href="{% url 'logout' %}"> Útskráning </a>
             {% else  %}
                 <a href="{% url 'login' %}"> Innskráning </a>

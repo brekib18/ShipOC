@@ -1,9 +1,15 @@
+
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login, authenticate
+
 from django.shortcuts import render, redirect
 
 from user.forms.user_form import SignUpForm
 
+
+
+from django.shortcuts import render
+from user.models import Profile
 
 def index(request):
     return render(request, 'user/register.html')
