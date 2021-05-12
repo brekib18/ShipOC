@@ -4,27 +4,21 @@ from django.contrib.auth import login, authenticate
 
 from django.shortcuts import render, redirect
 
+from user.forms.profile_form import ProfileForm
 from user.forms.user_form import SignUpForm
-
-
-
-from django.shortcuts import render
 from user.models import Profile
-
-def index(request):
-    return render(request, 'user/register.html')
 
 
 def profile(request):
     profile = Profile.objects.filter(user=request.user).first()
     if request.method == 'POST':
         form = ProfileForm(instance=profile, data=request.POST)
-        if fomr.is_valid():
+        if form.is_valid():
             profile = form.save(commit=False)
             profile.user = request.user
             profile.save()
             return redirect('profile')
-    return render(request, 'user/profile.html', {
+    return render (request, 'user/profile.html', {
         'form': ProfileForm(instance=profile)
     })
 
