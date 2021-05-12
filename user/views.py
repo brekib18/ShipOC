@@ -1,9 +1,14 @@
+<<<<<<< Updated upstream
 
 from django.shortcuts import render, redirect
 
 from user.forms.user_form import UserCreateForm
 
 
+=======
+from django.shortcuts import render
+from user.models import Profile
+>>>>>>> Stashed changes
 def index(request):
     return render(request, 'user/register.html')
 

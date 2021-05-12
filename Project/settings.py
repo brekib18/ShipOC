@@ -142,4 +142,4 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_URL = '/notandi/innskraning'
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/notandi/profile'
