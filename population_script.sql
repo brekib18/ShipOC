@@ -8,7 +8,7 @@ insert into cereal_cerealcategory(name) values ('Vegan');
 insert into cereal_cerealcategory(name) values ('Sætt');
 insert into cereal_cerealcategory(name) values ('Sykurlítið');
 
-<<<<<<< Updated upstream
+
 -- CEREAL
 insert into cereal_cereal(name, description, price, category_id_id, cereal_category_id_id,on_sale) values ('Cocoa Puffs','Hver elskar ekki Cocoa Puffs? Hrikalega bragðgott. Cocoa puffs inniheldur sykur, litarefni, hafra, sterkju, rotvarnarefni og egg.','650',37,29,False);
 insert into cereal_cereal(name, description, price, category_id_id, cereal_category_id_id,on_sale) values ('Cheerios','Eitt allra vinsælasta morgunkorn allra tíma! Cheerios innihledur rotvarnarefni, maíssterkju, ýruefni, salt, bindiefni, vítamín, steinefni og hafra.','420',37,30,False);

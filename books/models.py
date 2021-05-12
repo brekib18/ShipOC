@@ -7,8 +7,9 @@ class BooksCategory(models.Model):
 class Books(models.Model):
     name = models.CharField(max_length=255)
     description = models.CharField(max_length=255,blank=True)
-    category = models.ForeignKey(Category,on_delete=models.CASCADE)
     price = models.IntegerField()
+    category_id_id = models.ForeignKey(Category,on_delete=models.CASCADE)
+
 
     def __str__(self):
         return self.name
