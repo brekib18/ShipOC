@@ -1,11 +1,11 @@
 from django.forms import ModelForm, widgets
 from django import forms
-from books.models import Book
+from books.models import Books
 
 class BookCreateForm(ModelForm):
     image = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': 'form-control'}))
     class Meta:
-        model = Book
+        model = Books
         exclude = ['id']
         widgets = {
             'name': widgets.TextInput(attrs={'class': 'form-control'}),
