@@ -11,5 +11,5 @@ class BookCreateForm(ModelForm):
             'name': widgets.TextInput(attrs={'class': 'form-control'}),
             'description': widgets.TextInput(attrs={'class': 'form-control'}),
             'price': widgets.NumberInput(attrs={'class': 'form-control'}),
-            'category_id_id': widgets.Select(attrs={'class': 'form-control'})
+            'category': widgets.Select(attrs={'class': 'form-control'})
         }

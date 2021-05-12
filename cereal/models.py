@@ -5,6 +5,9 @@ from frontpage.models import Category
 class CerealCategory(models.Model):
     name = models.CharField(max_length=255)
 
+    def __str__(self):
+        return self.name
+
 
 class Cereal(models.Model):
     name = models.CharField(max_length=255)
