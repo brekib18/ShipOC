@@ -4,12 +4,12 @@ $(document).ready(function(){
         console.log('Eg náði að ýta á takkann')
         var searchText = $('#search-box3').val();
         $.ajax( {
-            url: '/fylgihlutir?search_filter=' + searchText,
+            url: '/accessories?search_filter=' + searchText,
             type: 'GET',
             success: function(res){
                 var newHtml = res.data.map(d => {
                     return `<div class="well candy">
-                            <a href="/fylgihlutir/${d.id}">
+                            <a href="/accessories/${d.id}">
                                 <img class="product-img" src="${d.firstImage}" />
                                 <h4>${d.name}</h4>
                                 <p>${d.description}</p>

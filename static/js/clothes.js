@@ -3,12 +3,12 @@ $(document).ready(function(){
         e.preventDefault();
         var searchText = $('#search-box2').val();
         $.ajax( {
-            url: '/fot?search_filter=' + searchText,
+            url: '/clothes?search_filter=' + searchText,
             type: 'GET',
             success: function(res){
                 var newHtml = res.data.map(d => {
                     return `<div class="well candy">
-                            <a href="/fot/${d.id}">
+                            <a href="/clothes/${d.id}">
                                 <img class="product-img" src="${d.firstImage}" />
                                 <h4>${d.name}</h4>
                                 <p>${d.description}</p>
