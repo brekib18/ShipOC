@@ -3,12 +3,10 @@ from django.shortcuts import render
 
 from books.forms.book_form import BookCreateForm
 from books.forms.book_form import BookUpdateForm
-from books.models import BooksImage
-from books.models import Books
+from books.models import Books, BooksImage
 from django.shortcuts import get_object_or_404, redirect
 from django.http import JsonResponse
 
-from books.models import BooksImage
 
 
 def index(request):

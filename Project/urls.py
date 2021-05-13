@@ -20,14 +20,14 @@ urlpatterns = [
     path('',include('frontpage.urls')),
     path('admin/', admin.site.urls),
     path('cereals/', include('cereal.urls')),
-    path('fylgihlutir/', include('accessories.urls')),
+    path('accessories/', include('accessories.urls')),
     path('clothes/', include('clothes.urls')),
-    path('baekur/', include('books.urls')),
-    path('upplysingar/', include('info.urls')),
-    path('hafasamband/', include('contact.urls')),
-    path('spjall/',include('chat.urls')),
-    path('uppahalds/',include('favorites.urls')),
-    path('karfa/',include('cart.urls')),
-    path('innskraning/',include('login.urls')),
-    path('notandi/',include('user.urls'))
+    path('books/', include('books.urls')),
+    path('information/', include('info.urls')),
+    path('contactus/', include('contact.urls')),
+    path('chat/',include('chat.urls')),
+    path('favorites/',include('favorites.urls')),
+    path('cart/',include('cart.urls')),
+    path('login/',include('login.urls')),
+    path('user/',include('user.urls'))
 ]
