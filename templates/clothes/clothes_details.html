@@ -7,6 +7,10 @@
     {% for clothesimage in clothes.clothesimage_set.all %}
         <img src="{{ clothesimage.image }}" class="product-img"/>
     {% endfor %}
+
     <button>Add to cart</button>
     <button>Add to favorites</button>
+
+    <a href="{% url 'delete_clothes' clothes.id %}" class="block btn btn-primary">Delete clothes</a>
+    <a href="{% url 'update_clothes' clothes.id %}" class="block btn btn-primary">Update clothes</a>
 {% endblock %}
