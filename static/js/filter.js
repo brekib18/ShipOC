@@ -1,18 +1,16 @@
 $(document).ready(function(){
-    $('#search-btn').on('click', function(e){
+    $('.radio').on('change', function (e) {
         e.preventDefault();
-        console.log('takkinn virkar')
-        console.log('ytti a takkann')
-        var searchText = $('#search-box').val();
+        var radio_value = this.value
+        console.log(radio_value)
         $.ajax( {
-            url: '/cereals?search_filter=' + searchText,
+            url: '/cereals?filter=' + radio_value,
             type: 'GET',
             success: function(res){
+                console.log('ahdghas;glak')
+                console.log(res.data)
                 var newHtml = res.data.map(d => {
-                    console.log('Hér er ég')
-                    console.log(res.data)
-                    console.log(res.data)
-                    console.log('hallo')
+                    console.log('her erum vid')
                     return `<div class="well candy">
                             <a href="/cereals/${d.id}">
                                 <img class="product-img" src="${d.firstImage}" />
@@ -28,9 +26,5 @@ $(document).ready(function(){
                 //TODO: show toastr
                 console.error(error);
             }
-        })
-    });
-});
-
-console.log('blabla')
-
+            });
+        });})
