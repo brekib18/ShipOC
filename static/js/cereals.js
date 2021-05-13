@@ -1,12 +1,15 @@
 $(document).ready(function(){
     $('#search-btn').on('click', function(e){
         e.preventDefault();
+        console.log('takkinn virkar')
         var searchText = $('#search-box').val();
         $.ajax( {
             url: '/cereals?search_filter=' + searchText,
             type: 'GET',
             success: function(res){
                 var newHtml = res.data.map(d => {
+                    console.log('Hér er ég')
+                    console.log(res.data)
                     return `<div class="well candy">
                             <a href="/cereals/${d.id}">
                                 <img class="product-img" src="${d.firstImage}" />
