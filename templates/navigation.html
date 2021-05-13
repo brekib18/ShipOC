@@ -14,20 +14,20 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <div id = "chat_baloon">
-            <a class="hyplinks_navdown"  HREF={% url 'chat-index' %}> <img class="logophotos" src="../../static/images/chat.png" alt="instagram"> </a>
-            <a class="hyplinks_navdown"  HREF={% url 'cart-index' %}> <img class="logophotos" src="../../static/images/cart.png" alt="instagram"> </a>
-            <a class="hyplinks_navdown"  HREF={% url 'favorites-index' %}> <img class="logophotos" src="../../static/images/heart.png" alt="instagram"> </a>
+            <a class="hyplinks_navdown"  HREF={% url 'chat-index' %}> <img class="logophotos" src="../../static/images/chat.png" alt="chat"> </a>
            <!-- <a class="hyplinks_navdown"  HREF={% url 'login-index' %}> <img class="logophotos" src="../../static/images/account.png" alt="instagram"> </a> -->
 
 
 
             {% if user.is_authenticated %}
+                <img class="logophotos" src="../../static/images/cart.png" alt="cart">
+                <a class="hyplinks_navdown"  HREF={% url 'favorites-index' %}> <img class="logophotos" src="../../static/images/heart.png" alt="heart"> </a>
                 <img src = "{{ user.profile.profile_image }}" class="profile-image"/>
-                <a href = "{% url 'profile' %}"> Profile </a>
-                <a href="{% url 'logout' %}"> Log out </a>
+                <a class="nav_texts" href = "{% url 'profile' %}"> Profile </a>
+                <a class="nav_texts" href="{% url 'logout' %}"> Log out </a>
             {% else  %}
-                <a href="{% url 'login' %}"> Log in </a>
-                <a href="{% url 'register' %}"> Sign up </a>
+                <a class="nav_texts" href="{% url 'login' %}"> Log in </a>
+                <a class="nav_texts" href="{% url 'register' %}"> Sign up </a>
             {% endif %}
 
 
