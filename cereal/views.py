@@ -1,7 +1,4 @@
 from django.shortcuts import render
-from cereal.models import Cereal
-from django.shortcuts import render
-from cereal.models import Cereal
 from django.shortcuts import get_object_or_404, redirect
 from django.http import JsonResponse
 from cart.models import Cart
