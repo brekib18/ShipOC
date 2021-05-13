@@ -2,8 +2,11 @@ from django.shortcuts import render
 from cereal.models import Cereal
 from django.shortcuts import render
 from cereal.models import Cereal
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, redirect
 from django.http import JsonResponse
+
+from cereal.forms.cereal_form import CerealCreateForm, CerealUpdateForm
+from cereal.models import Cereal, CerealImage
 
 
 # Create your views here.
@@ -23,8 +26,51 @@ def index(request):
     return render(request, 'cereal/index.html', context)
 
 
+
 def get_cereal_by_id(request, id):
     return render(request, 'cereal/cereal_details.html',{
         'cereal': get_object_or_404(Cereal, pk=id)
     })
+
+
+def create_cereal(request):
+    if request.method == 'POST':
+        form = CerealCreateForm(data=request.POST)
+        if form.is_valid():
+            cereal = form.save()
+            cereal_image = CerealImage(image=request.POST['image'], cereal=cereal)
+            cereal_image.save()
+            return redirect('cereal-index')
+    else:
+        form = CerealCreateForm()
+        # TODO: Instance new BookCreateForm()
+    return render(request, 'cereal/create_cereal.html', {
+        'form': form
+    })
+
+
+
+def delete_cereal(request, id):
+    cereal = get_object_or_404(Cereal, pk=id)
+    cereal.delete()
+    return redirect('cereal-index')
+
+
+def update_cereal(request, id):
+    instance = get_object_or_404(Cereal, pk=id)
+    if request.method == 'POST':
+        form = CerealUpdateForm(data=request.POST, instance=instance)
+        if form.is_valid():
+            form.save()
+            return redirect('cereal-details', id=id)
+    else:
+        form = CerealUpdateForm(instance=instance)
+        print(2)
+    return render(request, 'cereal/update_cereal.html',{
+        'form': form,
+        'id': id
+
+    })
+
+
 
