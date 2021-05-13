@@ -33,7 +33,7 @@ def create_book(request):
     if request.method == 'POST':
         form = BookCreateForm(data=request.POST)
         if form.is_valid():
-            book = form.save
+            book = form.save()
             book_image = BooksImage(image=request.POST['image'], book=book)
             book_image.save()
             return redirect('books-index')
