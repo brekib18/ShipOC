@@ -75,18 +75,17 @@ def update_cereal(request, id):
     })
 
 
-
-def add_to_cart(request):
-    if request.method == "GET":
-        cart_item = [{
-            'id': x.id,
-            'name': x.name,
-            'description': x.description,
-            'firstImage': x.cerealimage_set.first().image
-        } for x in Cart.objects.all()]
-        return JsonResponse({'data': cart_item})
-    context = {'cart_item': Cart.objects.all().order_by('name')}
-    return render(request, 'cereal/index.html', context)
+# def add_to_cart(request):
+#     if request.method == "GET":
+#         cart_item = [{
+#             'id': x.id,
+#             'name': x.name,
+#             'description': x.description,
+#             'firstImage': x.cerealimage_set.first().image
+#         } for x in Cart.objects.all()]
+#         return JsonResponse({'data': cart_item})
+#     context = {'cart_item': Cart.objects.all().order_by('name')}
+#     return render(request, 'cereal/index.html', context)
 
         # context = {'cereals': Cereal.objects.filter(name__icontains=search_filter)}
         # return render(request, 'cereal/index.html', context)
