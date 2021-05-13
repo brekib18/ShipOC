@@ -1,18 +1,13 @@
 $(document).ready(function(){
     $('#search-btn').on('click', function(e){
         e.preventDefault();
-        console.log('takkinn virkar')
-        console.log('ytti a takkann')
         var searchText = $('#search-box').val();
         $.ajax( {
             url: '/cereals?search_filter=' + searchText,
             type: 'GET',
             success: function(res){
                 var newHtml = res.data.map(d => {
-                    console.log('Hér er ég')
-                    console.log(res.data)
-                    console.log(res.data)
-                    console.log('hallo')
+                    console.log(res)
                     return `<div class="well candy">
                             <a href="/cereals/${d.id}">
                                 <img class="product-img" src="${d.firstImage}" />
@@ -32,5 +27,5 @@ $(document).ready(function(){
     });
 });
 
-console.log('blabla')
+
 
