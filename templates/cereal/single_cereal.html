@@ -3,7 +3,8 @@
         <img class="product-img" src="{{ cereal.cerealimage_set.first.image }}"/>
         <h4>{{ cereal.name }}</h4>
         <p>{{ cereal.price }} kr.</p>
-        <button class = "cart_btn"><img class="logophotos" src="../../static/images/cart.png" alt="instagram"></button>
-{#        <a href = "#"><img class="cart_btn" src="../../static/images/cart.png" alt="instagram"></a>#}
+        jaja
+{#        <button class = "cart_btn"><img class="logophotos" src="../../static/images/cart.png" alt="instagram"></button>#}
+  <a href = {% url 'cereal-index' %}>Add to cart</a>
         <button><a href = "#"><img class="logophotos" src="../../static/images/heart.png" alt="instagram"></a></button>    </a>
 </div>

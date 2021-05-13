@@ -4,6 +4,7 @@ from django.shortcuts import render
 from cereal.models import Cereal
 from django.shortcuts import get_object_or_404, redirect
 from django.http import JsonResponse
+from cart.models import Cart
 
 from cereal.forms.cereal_form import CerealCreateForm, CerealUpdateForm
 from cereal.models import Cereal, CerealImage
@@ -31,6 +32,7 @@ def get_cereal_by_id(request, id):
     return render(request, 'cereal/cereal_details.html',{
         'cereal': get_object_or_404(Cereal, pk=id)
     })
+
 
 
 def create_cereal(request):
@@ -72,5 +74,22 @@ def update_cereal(request, id):
 
     })
 
+
+
+def add_to_cart(request):
+    if request.method == "GET":
+        cart_item = [{
+            'id': x.id,
+            'name': x.name,
+            'description': x.description,
+            'firstImage': x.cerealimage_set.first().image
+        } for x in Cart.objects.all()]
+        return JsonResponse({'data': cart_item})
+    context = {'cart_item': Cart.objects.all().order_by('name')}
+    return render(request, 'cereal/index.html', context)
+
+        # context = {'cereals': Cereal.objects.filter(name__icontains=search_filter)}
+        # return render(request, 'cereal/index.html', context)
+        # return render(request, 'cereal/index.html')
 
 
