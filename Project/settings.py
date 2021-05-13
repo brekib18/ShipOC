@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'clothes.apps.ClothesConfig',
     'frontpage.apps.FrontpageConfig',
     'user.apps.UserConfig',
-    'cart.apps.CartConfig'
+    'cart.apps.CartConfig',
+    'django_countries'
 ]
 
 
