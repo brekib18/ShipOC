@@ -6,9 +6,7 @@ $(document).ready(function(){
             url: '/cereals?filter='+this.value,
             type: 'GET',
             success: function(res){
-                console.log("this is res.data"+res.data.map)
-                console.log(res.data)
-                console.log("haha")
+
                 var newHtml = res.data.map(d => {
                     return `<div class="well candy">
                             <a href="/cereals/${d.id}">

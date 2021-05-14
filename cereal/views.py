@@ -32,7 +32,13 @@ def index(request):
             print(filter_by_cat)
             print(elem.cereal_category_id.id)
             if str(elem.cereal_category_id.id) == str(filter_by_cat):
-                print('jladjflæa')
+                cereals.append({
+                    'id': elem.id,
+                    'name': elem.name,
+                    'description': elem.description,
+                    'firstImage': elem.cerealimage_set.first().image
+                })
+            elif str(filter_by_cat) == "all":
                 cereals.append({
                     'id': elem.id,
                     'name': elem.name,
