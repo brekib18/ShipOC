@@ -7,7 +7,6 @@ from clothes.forms.clothes_form import ClothesCreateForm, ClothesUpdateForm
 from clothes.models import Clothes, ClothesImage
 
 
-
 def index(request):
     if 'search_filter' in request.GET:
         search_filter = request.GET['search_filter']
@@ -15,7 +14,8 @@ def index(request):
             'id': x.id,
             'name': x.name,
             'description': x.description,
-            'firstImage': x.clothesimage_set.first().image
+            'firstImage': x.clothesimage_set.first().image,
+            'price': x.price
         } for x in Clothes.objects.filter(name__icontains=search_filter)]
         return JsonResponse({'data': clothes})
     context = {'clothes': Clothes.objects.all().order_by('name')}

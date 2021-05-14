@@ -8,11 +8,11 @@ $(document).ready(function(){
             type: 'GET',
             success: function(res){
                 var newHtml = res.data.map(d => {
-                    return `<div class="well candy">
+                    return `<div class="well_cereal">
                             <a href="/books/${d.id}">
                                 <img class="product-img" src="${d.firstImage}" />
                                 <h4>${d.name}</h4>
-                                <p>${d.description}</p>
+                                <p>${d.price} kr.</p>
                             </a>
                     </div>`
                 });

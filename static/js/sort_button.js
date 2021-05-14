@@ -3,11 +3,11 @@ $(document).ready(function(){
         console.log(this.value)
         e.preventDefault();
         $.ajax( {
-            url: '/cereals?sort_button='+this.value,
+            url: '/accessories?sort_button='+this.value,
             type: 'GET',
             success: function(res){
                 var newHtml = res.data.map(d => {
-                    return `<div class="well candy">
+                    return `<div class="well_cereal">
                             <a href="/cereals/${d.id}">
                                 <img class="product-img" src="${d.firstImage}" />
                                 <h4>${d.name}</h4>
@@ -24,4 +24,5 @@ $(document).ready(function(){
             }
             });
         });})
+console.log('weelcere')
 

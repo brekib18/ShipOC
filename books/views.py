@@ -17,7 +17,8 @@ def index(request):
             'id': x.id,
             'name': x.name,
             'description': x.description,
-            'firstImage': x.booksimage_set.first().image
+            'firstImage': x.booksimage_set.first().image,
+            'price': x.price
         } for x in Books.objects.filter(name__icontains=search_filter)]
         return JsonResponse({'data': books})
     context = {'books': Books.objects.all().order_by('name')}

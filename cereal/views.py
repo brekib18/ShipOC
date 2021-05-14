@@ -15,13 +15,13 @@ from cereal.models import Cereal, CerealImage
 def index(request):
     if 'sort_button' in request.GET:
         sort_button = request.GET['sort_button']
+        print('hallo')
         if sort_button == 'alphabetical':
             result = Cereal.objects.all()
             cereals = []
             result = result.order_by('name')
             for elem in result:
-                print(sort_button)
-                print(result)
+
                 cereals.append({
                     'id': elem.id,
                     'name': elem.name,
@@ -29,14 +29,12 @@ def index(request):
                     'firstImage': elem.cerealimage_set.first().image,
                     'price': elem.price
                     })
-                print(cereals)
         elif sort_button == 'price_low':
             result = Cereal.objects.all()
             cereals = []
             result = result.order_by('price')
             for elem in result:
-                print(sort_button)
-                print(result)
+
                 cereals.append({
                     'id': elem.id,
                     'name': elem.name,
@@ -49,8 +47,7 @@ def index(request):
             cereals = []
             result = result.order_by('-price')
             for elem in result:
-                print(sort_button)
-                print(result)
+
                 cereals.append({
                     'id': elem.id,
                     'name': elem.name,
@@ -66,7 +63,8 @@ def index(request):
             'id': x.id,
             'name': x.name,
             'description': x.description,
-            'firstImage': x.cerealimage_set.first().image
+            'firstImage': x.cerealimage_set.first().image,
+            'price': x.price
         } for x in Cereal.objects.filter(name__icontains=search_filter)]
         return JsonResponse({'data': cereals})
     context = {'cereals': Cereal.objects.all().order_by('name')}
@@ -76,8 +74,7 @@ def index(request):
         result = Cereal.objects.all()
         cereals = []
         for elem in result:
-            print(filter_by_cat)
-            print(elem.cereal_category_id.id)
+
             if str(elem.cereal_category_id.id) == str(filter_by_cat):
                 cereals.append({
                     'id': elem.id,

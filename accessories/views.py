@@ -7,14 +7,62 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
+
 def index(request):
+    if 'sort_button' in request.GET:
+        sort_button = request.GET['sort_button']
+        if sort_button == 'alphabetical':
+
+            result = Accessories.objects.all()
+
+            accessories = []
+            result = result.order_by('name')
+            for elem in result:
+
+                accessories.append({
+                    'id': elem.id,
+                    'name': elem.name,
+                    'description': elem.description,
+                    'firstImage': elem.accessoriesimage_set.first().image,
+                    'price': elem.price
+                    })
+        elif sort_button == 'price_low':
+            result = Accessories.objects.all()
+            accessories = []
+            result = result.order_by('price')
+            for elem in result:
+
+                accessories.append({
+                    'id': elem.id,
+                    'name': elem.name,
+                    'description': elem.description,
+                    'firstImage': elem.accessoriesimage_set.first().image,
+                    'price': elem.price
+                    })
+        elif sort_button == 'price_high':
+
+            result = Accessories.objects.all()
+            accessories = []
+            result = result.order_by('-price')
+            print(result)
+            for elem in result:
+                accessories.append({
+                    'id': elem.id,
+                    'name': elem.name,
+                    'description': elem.description,
+                    'firstImage': elem.accessoriesimage_set.first().image,
+                    'price': elem.price
+                    })
+        return JsonResponse({'data': accessories})
+
     if 'search_filter' in request.GET:
         search_filter = request.GET['search_filter']
         accessories = [{
             'id': x.id,
             'name': x.name,
             'description': x.description,
-            'firstImage': x.accessoriesimage_set.first().image
+            'firstImage': x.accessoriesimage_set.first().image,
+            'price': x.price
         } for x in Accessories.objects.filter(name__icontains=search_filter)]
         return JsonResponse({'data': accessories})
     context = {'accessories': Accessories.objects.all().order_by('name')}
