@@ -9,7 +9,6 @@
     {% endfor %}
 
     <a href="{% url 'add_to_cart' cereal.id %}" class = "button add-button">Add to cart</a>
-    <button>Add to favorites</button>
 
 
     {% if user.is_superuser %}

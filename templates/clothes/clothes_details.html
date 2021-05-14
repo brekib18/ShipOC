@@ -9,7 +9,6 @@
     {% endfor %}
 
     <button>Add to cart</button>
-    <button>Add to favorites</button>
 
     {% if user.is_superuser %}
     <a href="{% url 'delete_clothes' clothes.id %}" class="block btn btn-primary">Delete clothes</a>
