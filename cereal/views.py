@@ -43,7 +43,8 @@ def index(request):
                     'id': elem.id,
                     'name': elem.name,
                     'description': elem.description,
-                    'firstImage': elem.cerealimage_set.first().image
+                    'firstImage': elem.cerealimage_set.first().image,
+                    'price': elem.price
                 })
         return JsonResponse({'data': cereals})
     return render(request, 'cereal/index.html', context)
