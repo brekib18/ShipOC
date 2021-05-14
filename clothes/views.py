@@ -8,6 +8,50 @@ from clothes.models import Clothes, ClothesImage
 
 
 def index(request):
+    if 'sort_button' in request.GET:
+
+        sort_button = request.GET['sort_button']
+
+        if sort_button == 'alphabetical':
+            result = Clothes.objects.all()
+            clothes = []
+            result = result.order_by('name')
+            for elem in result:
+
+                clothes.append({
+                    'id': elem.id,
+                    'name': elem.name,
+                    'description': elem.description,
+                    'firstImage': elem.clothesimage_set.first().image,
+                    'price': elem.price
+                    })
+        elif sort_button == 'price_low':
+            result = Clothes.objects.all()
+            clothes = []
+            result = result.order_by('price')
+            for elem in result:
+
+                clothes.append({
+                    'id': elem.id,
+                    'name': elem.name,
+                    'description': elem.description,
+                    'firstImage': elem.clothesimage_set.first().image,
+                    'price': elem.price
+                    })
+        elif sort_button == 'price_high':
+            result = Clothes.objects.all()
+            clothes = []
+            result = result.order_by('-price')
+            for elem in result:
+
+                clothes.append({
+                    'id': elem.id,
+                    'name': elem.name,
+                    'description': elem.description,
+                    'firstImage': elem.clothesimage_set.first().image,
+                    'price': elem.price
+                    })
+        return JsonResponse({'data': clothes})
     if 'search_filter' in request.GET:
         search_filter = request.GET['search_filter']
         clothes = [{
