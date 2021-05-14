@@ -51,19 +51,7 @@ def index(request):
     return render(request, 'cereal/index.html', context)
 
 
-# def filter_index(request):
-#     if 'filter' in request.GET:
-#         filter_by_cat = request.GET['filter']
-#         cereals = [{
-#             'id': x.id,
-#             'cat_id': x.cereal_category_id,
-#             'name': x.name,
-#             'description': x.description,
-#             'firstImage': x.cerealimage_set.first().image
-#         } for x in Cereal.objects.filter(cereal_category_id=filter_by_cat)]
-#         return JsonResponse({'data': cereals})
-#     context = {'cereals': Cereal.objects.all().order_by('cereal_category_id')}
-#     return render(request, 'cereal/filter_index.html', context)
+
 
 
 
