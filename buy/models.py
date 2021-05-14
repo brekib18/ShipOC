@@ -4,7 +4,7 @@ from cereal.models import Cereal
 from django.core.exceptions import ValidationError
 
 
-class BillingInfo(models.Model):
+class BillingInfos(models.Model):
     first_name = models.CharField(max_length=256)
     last_name = models.CharField(max_length=255)
     email = models.CharField(max_length=255)
@@ -31,7 +31,7 @@ def cvv_check(value):
     if len(str(value)) != 3:
         raise ValidationError('Invalid length')
 
-class PaymentInfo(models.Model):
+class PaymentInfos(models.Model):
     full_name = models.CharField(max_length=255)
     card_number = models.DecimalField(max_digits=16, decimal_places=0, validators=[credidcardcheck])
     exp_month = models.DecimalField(max_digits=2, decimal_places=0, validators=[exp_monthcheck])
@@ -41,12 +41,12 @@ class PaymentInfo(models.Model):
     active = models.BooleanField(default=True)
 
 
-class Order(models.Model):
+class Orders(models.Model):
     ordered_products = models.ManyToManyField(Cereal)
     user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     quantity = models.DecimalField(max_digits=2, decimal_places=0)
-    billing_info = models.ForeignKey(BillingInfo, null=True, on_delete=models.DO_NOTHING)
-    payment_info = models.ForeignKey(PaymentInfo, null=True, on_delete=models.DO_NOTHING)
+    billing_info = models.ForeignKey(BillingInfos, null=True, on_delete=models.DO_NOTHING)
+    payment_info = models.ForeignKey(PaymentInfos, null=True, on_delete=models.DO_NOTHING)
     step = models.CharField(max_length=255, default="billing")
 
     def __str__(self):

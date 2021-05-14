@@ -1,12 +1,12 @@
 from django.forms import ModelForm, widgets
-from payment.models import BillingInfo, PaymentInfo
+from buy.models import BillingInfos, PaymentInfos
 from django import forms
 
 
 
-class PaymentBillingForm(ModelForm):
+class PaymentBillingForms(ModelForm):
     class Meta:
-        model = BillingInfo
+        model = BillingInfos
         exclude = {'id', 'user', 'active'}
         widgets = {
             'first_name': widgets.TextInput(attrs={'class': 'form-control'}),
@@ -270,9 +270,9 @@ class PaymentBillingForm(ModelForm):
         }
 
 
-class PaymentInfoForm(ModelForm):
+class PaymentInfoForms(ModelForm):
     class Meta:
-        model = PaymentInfo
+        model = PaymentInfos
         exclude = {'id', 'user', 'active'}
         widgets = {
             'full_name': widgets.TextInput(attrs={'class': 'form-control'}),

@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'frontpage.apps.FrontpageConfig',
     'user.apps.UserConfig',
     'shopcart.apps.ShopcartConfig',
-    'payment.apps.PaymentConfig'
+    'payment.apps.PaymentConfig',
+    'buy.apps.BuyConfig'
 ]
 
 

@@ -30,5 +30,6 @@ urlpatterns = [
     path('login/',include('login.urls')),
     path('user/',include('user.urls')),
     path('shopping_cart/', include('shopcart.urls')),
-    path('payment/', include('payment.urls'))
+    path('payment/', include('payment.urls')),
+    path('payment/', include('buy.urls'))
 ]
