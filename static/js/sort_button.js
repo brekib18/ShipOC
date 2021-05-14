@@ -3,7 +3,7 @@ $(document).ready(function(){
         console.log(this.value)
         e.preventDefault();
         $.ajax( {
-            url: '/accessories?sort_button='+this.value,
+            url: '/cereals?sort_button='+this.value,
             type: 'GET',
             success: function(res){
                 var newHtml = res.data.map(d => {
