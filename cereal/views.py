@@ -71,29 +71,12 @@ def index(request):
         return JsonResponse({'data': cereals})
     context = {'cereals': Cereal.objects.all().order_by('name')}
 
-    if 'alphabet' in request.GET:
-        sort_by_alphabet = request.GET['sort_button']
-        result = Cereal.objects.all()
-        result = result.order_by('name')
-        cereals = []
-        for elem in result:
-            print(filter_by_cat)
-            print(elem.cereal_category_id.id)
-            cereals.append({
-                    'id': elem.id,
-                    'name': elem.name,
-                    'description': elem.description,
-                    'firstImage': elem.cerealimage_set.first().image,
-                    'price': elem.price
-                })
-
-        return JsonResponse({'data': cereals})
-
     if 'filter' in request.GET:
         filter_by_cat = request.GET['filter']
         result = Cereal.objects.all()
         cereals = []
         for elem in result:
+            print(filter_by_cat)
             print(elem.cereal_category_id.id)
             if str(elem.cereal_category_id.id) == str(filter_by_cat):
                 cereals.append({

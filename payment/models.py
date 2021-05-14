@@ -5,19 +5,12 @@ from django.core.exceptions import ValidationError
 
 
 class BillingInfo(models.Model):
-<<<<<<< Updated upstream
     first_name = models.CharField(max_length=256)
     last_name = models.CharField(max_length=255)
     email = models.CharField(max_length=255)
     address = models.CharField(max_length=255)
     city = models.CharField(max_length=255)
     zip_code = models.CharField(max_length=255)
-=======
-    full_name = models.CharField(max_length=256)
-    email = models.CharField(max_length=255)
-    address = models.CharField(max_length=255)
-    city = models.CharField(max_length=256)
->>>>>>> Stashed changes
     country = models.CharField(max_length=255)
     user = models.ForeignKey(User, on_delete=models.DO_NOTHING, null=True)
     active = models.BooleanField(default=True)
