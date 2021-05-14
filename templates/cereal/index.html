@@ -25,19 +25,23 @@
     <div class="sidenav">
         <p class="sidenames"> Product categories: </p>
         <div class="option_btns">
-            <INPUT TYPE="Radio" class = "radio" Name="categories" Value="sugar_low" onclick="" checked > Show all <br>
-            <INPUT TYPE="Radio" class = "radio" Name="categories" Value="sugar_low" onclick=""> Low in sugar <br>
-            <INPUT TYPE="Radio" class = "radio" Name="categories" Value="sugar_high" onclick=""> Sugary <br>
-            <INPUT TYPE="Radio" class = "radio" Name="categories" Value="vegan" onclick=""> Vegan
+            <button class="filter_button" value="all">Show all</button>
+            <button class="filter_button" value="30">Low in sugar</button>
+            <button class="filter_button" value="29">Sugary</button>
+            <button class="filter_button" value="28">Vegan</button>
+{#            <INPUT TYPE="Radio" class = "radio" Name="categories" Value="sugar_low" onclick="" checked > Show all <br>#}
+{#            <INPUT TYPE="Radio" class = "radio" Name="categories" Value="sugar_low" onclick=""> Low in sugar <br>#}
+{#            <INPUT TYPE="Radio" class = "radio" Name="categories" Value="sugar_high" onclick=""> Sugary <br>#}
+{#            <INPUT TYPE="Radio" class = "radio" Name="categories" Value="vegan" onclick=""> Vegan#}
 
 
         </div>
 
         <p class="sidenames"> Sort by: </p>
         <div class="option_btns">
-            <a href="?type_filter=1" class="game_type_filter">Alphabetical</a>
-            <a href="?type_filter=2" class="game_type_filter">price high</a>
-            <a href="?type_filter=3" class="game_type_filter">price low</a>
+            <button class="sort_button" value="alphabetical">Alphabetical</button>
+            <button class="sort_button" value="price_high">Price high</button>
+            <button class="sort_button" value="price_low">Price low</button>
         </div>
     </div>
     </div>

@@ -1,22 +1,18 @@
 $(document).ready(function(){
-    $('.game_type').on('change', function (e) {
+    $('.filter_button').on('click', function (e) {
+        console.log(this.value)
         e.preventDefault();
-        var radio_value = this.value
-        console.log(radio_value)
         $.ajax( {
-            url: '/cereals?filter=' + radio_value,
+            url: '/cereals?filter='+this.value,
             type: 'GET',
-
             success: function(res){
-                console.log('her erum vid2')
-                console.log(res)
-                var newHtml = res.data.map(d => {
 
+                var newHtml = res.data.map(d => {
                     return `<div class="well candy">
                             <a href="/cereals/${d.id}">
                                 <img class="product-img" src="${d.firstImage}" />
                                 <h4>${d.name}</h4>
-                                <p>${d.description}</p>
+                                <p>${d.price} kr.</p>
                             </a>
                     </div>`
                 });

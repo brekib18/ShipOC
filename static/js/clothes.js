@@ -6,6 +6,7 @@ $(document).ready(function(){
             url: '/clothes?search_filter=' + searchText,
             type: 'GET',
             success: function(res){
+                console.log(res)
                 var newHtml = res.data.map(d => {
                     return `<div class="well candy">
                             <a href="/clothes/${d.id}">
@@ -25,3 +26,4 @@ $(document).ready(function(){
         })
     });
 });
+

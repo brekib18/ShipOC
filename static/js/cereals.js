@@ -7,7 +7,6 @@ $(document).ready(function(){
             type: 'GET',
             success: function(res){
                 var newHtml = res.data.map(d => {
-                    console.log(res)
                     return `<div class="well candy">
                             <a href="/cereals/${d.id}">
                                 <img class="product-img" src="${d.firstImage}" />

@@ -13,27 +13,7 @@ from cereal.models import Cereal, CerealImage
 
 
 def index(request):
-    if "type_filter" in request.GET:
-        type_filter = request.GET["type_filter"]
-        if type_filter == 'price_high':
-            context = {
-                'products': Cereal.objects.filter(category_id_id=37).order_by('price')}
-        elif type_filter == 'price_low':
-            context = {
-                'products': Cereal.objects.filter(category_id_id=37).order_by('-price')}
-        elif type_filter=='name':
-            context = {
-                'products': Cereal.objects.filter(category_id_id=37).order_by('name')}
-        else:
-            context = {
-                'products': Cereal.objects.filter(category_id=type_filter, cereal_category_id_id=37).order_by("name"),
-                'title': 'Games',
-                'category': True
-
-            }
-        return render(request, 'cereal/filter_index.html', context)
     if 'search_filter' in request.GET:
-        print('hallohallo')
         search_filter = request.GET['search_filter']
         cereals = [{
             'id': x.id,
@@ -43,22 +23,35 @@ def index(request):
         } for x in Cereal.objects.filter(name__icontains=search_filter)]
         return JsonResponse({'data': cereals})
     context = {'cereals': Cereal.objects.all().order_by('name')}
+
+    if 'filter' in request.GET:
+        filter_by_cat = request.GET['filter']
+        result = Cereal.objects.all()
+        cereals = []
+        for elem in result:
+            print(filter_by_cat)
+            print(elem.cereal_category_id.id)
+            if str(elem.cereal_category_id.id) == str(filter_by_cat):
+                cereals.append({
+                    'id': elem.id,
+                    'name': elem.name,
+                    'description': elem.description,
+                    'firstImage': elem.cerealimage_set.first().image,
+                    'price': elem.price
+                })
+            elif str(filter_by_cat) == "all":
+                cereals.append({
+                    'id': elem.id,
+                    'name': elem.name,
+                    'description': elem.description,
+                    'firstImage': elem.cerealimage_set.first().image,
+                    'price': elem.price
+                })
+        return JsonResponse({'data': cereals})
     return render(request, 'cereal/index.html', context)
 
 
-# def filter_index(request):
-#     if 'filter' in request.GET:
-#         filter_by_cat = request.GET['filter']
-#         cereals = [{
-#             'id': x.id,
-#             'cat_id': x.cereal_category_id,
-#             'name': x.name,
-#             'description': x.description,
-#             'firstImage': x.cerealimage_set.first().image
-#         } for x in Cereal.objects.filter(cereal_category_id=filter_by_cat)]
-#         return JsonResponse({'data': cereals})
-#     context = {'cereals': Cereal.objects.all().order_by('cereal_category_id')}
-#     return render(request, 'cereal/filter_index.html', context)
+
 
 
 
