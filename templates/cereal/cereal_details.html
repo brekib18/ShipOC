@@ -12,8 +12,9 @@
     <button>Add to favorites</button>
 
 
-
+    {% if user.is_superuser %}
     <a href="{% url 'delete_cereal' cereal.id %}" class="block btn btn-primary">Delete cereal</a>
     <a href="{% url 'update_cereal' cereal.id %}" class="block btn btn-primary">Update cereal</a>
+    {% endif %}
 
 {% endblock %}

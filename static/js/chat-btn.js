@@ -8,8 +8,6 @@ $(document).ready(function(){
         newchat.className ='chat_response'
         newchat.textContent = input_val
         chat.appendChild(newchat)
-
-
     })})
 
 function myClick(){
