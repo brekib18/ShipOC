@@ -9,12 +9,10 @@ class PaymentBillingForm(ModelForm):
         model = BillingInfo
         exclude = {'id', 'user', 'active'}
         widgets = {
-            'first_name': widgets.TextInput(attrs={'class': 'form-control'}),
-            'last_name': widgets.TextInput(attrs={'class': 'form-control'}),
+            'full_name': widgets.TextInput(attrs={'class': 'form-control'}),
             'email': widgets.EmailInput(attrs={'class': 'form-control'}),
             'address': widgets.TextInput(attrs={'class': 'form-control'}),
             'city': widgets.TextInput(attrs={'class': 'form-control'}),
-            'zip_code': widgets.TextInput(attrs={'class': 'checkbox'}),
             'country': widgets.Select(choices=[
                 ('AF', 'Afghanistan',),
                 ('AX', 'Aland Islands',),
@@ -265,8 +263,8 @@ class PaymentBillingForm(ModelForm):
                 ('YE', 'Yemen',),
                 ('ZM', 'Zambia',),
                 ('ZW', 'Zimbabwe',)
-
-            ])
+            ]),
+            'postal_code': widgets.TextInput(attrs={'class': 'checkbox'})
         }
 
 
@@ -275,9 +273,33 @@ class PaymentInfoForm(ModelForm):
         model = PaymentInfo
         exclude = {'id', 'user', 'active'}
         widgets = {
-            'full_name': widgets.TextInput(attrs={'class': 'form-control'}),
+            'cardholder': widgets.TextInput(attrs={'class': 'form-control'}),
             'card_number': widgets.NumberInput(attrs={'class': 'form-control'}),
-            'exp_month': widgets.NumberInput(attrs={'class': 'form-control'}),
-            'exp_year': widgets.NumberInput(attrs={'class': 'form-control'}),
-            'cvv': widgets.NumberInput(attrs={'class': 'form-control'}),
+            'exp_month': widgets.Select(choices=[
+                ('01'),
+                ('02'),
+                ('03'),
+                ('04'),
+                ('05'),
+                ('06'),
+                ('07'),
+                ('08'),
+                ('09'),
+                ('10'),
+                ('11'),
+                ('12')
+            ]),
+            'exp_year': widgets.Select(choices=[
+                ('21'),
+                ('22'),
+                ('23'),
+                ('24'),
+                ('25'),
+                ('26'),
+                ('27'),
+                ('28'),
+                ('29'),
+                ('30')
+            ]),
+            'cvc': widgets.NumberInput(attrs={'class': 'form-control'}),
         }

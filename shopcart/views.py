@@ -15,7 +15,7 @@ def my_cart(request):
         for x in Cart.objects.filter(user_id = request.user.id):
             prod.append(x)
         print(prod)
-        prod_ids = [p.product_id for p in prod]
+        prod_ids = [p.cereal_id for p in prod]
         context = {'items': prod, 'totalprice': _total_price(prod_ids, request.user.id)}
         return render(request,'shopcart/index.html', context)
 

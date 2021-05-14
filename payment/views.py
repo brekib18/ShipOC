@@ -49,7 +49,7 @@ def billing_info(request):
             return redirect('/payment/payment_info')
     else:
         form = PaymentBillingForm(data=request.GET)
-    return render(request, 'payment/billing_submit.html', {
+    return render(request, 'payment/checkout.html', {
         'form': form
     })
 
@@ -71,7 +71,7 @@ def order_overview(request):
     context = {'items': Cereal.objects.filter(id__in=prod_int), 'totalprice': _total_price(prod_int, request.user.id),
                'itemcount': item_count}
 
-    return render(request, 'payment/overview.html', context)
+    return render(request, 'payment/review.html', context)
 
 
 def confirmation(request):
@@ -102,7 +102,7 @@ def confirmation(request):
                'itemcount': item_count}
 
     delete_cart(request)
-    return render(request, 'payment/confirmation.html', context)
+    return render(request, 'payment/confirm.html', context)
 
 
 def delete_cart(request):

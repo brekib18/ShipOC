@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<br><br>
+<div class="container-cart-items">
+    <h2>Overview of your order</h2>
+    <h4 style="color:black">Items in Cart
+        <span class="price" style="color:black">
+            <i class="fa fa-shopping-cart"style="color:black"></i>
+        </span>
+        {{itemcount}}<br><br>
+    </h4>
+    {% for item in items %}
+        <img class ="payment-img" src="{{item.cerealimage_set.first.image}}"/>
+        <span class="price">{{item.price}} ISK</span></p>
+    {% endfor %}
+    <hr>
+    <h4 style="color:black">Total Price: {{totalprice}} ISK</h4>
+    <hr>
+    <a href="/payment/billing/" class = "button normal-button"> Go back </a>
+    <button id="to-confirmation" class = "button buy-button"> Confirm Order </button>
+</div>
+{% endblock %}
