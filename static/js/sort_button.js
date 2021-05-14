@@ -1,12 +1,11 @@
 $(document).ready(function(){
-    $('.filter_button').on('click', function (e) {
+    $('.sort_button').on('click', function (e) {
         console.log(this.value)
         e.preventDefault();
         $.ajax( {
-            url: '/cereals?filter='+this.value,
+            url: '/cereals?sort_button='+this.value,
             type: 'GET',
             success: function(res){
-
                 var newHtml = res.data.map(d => {
                     return `<div class="well candy">
                             <a href="/cereals/${d.id}">

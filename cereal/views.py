@@ -13,6 +13,53 @@ from cereal.models import Cereal, CerealImage
 
 
 def index(request):
+    if 'sort_button' in request.GET:
+        sort_button = request.GET['sort_button']
+        if sort_button == 'alphabetical':
+            result = Cereal.objects.all()
+            cereals = []
+            result = result.order_by('name')
+            for elem in result:
+                print(sort_button)
+                print(result)
+                cereals.append({
+                    'id': elem.id,
+                    'name': elem.name,
+                    'description': elem.description,
+                    'firstImage': elem.cerealimage_set.first().image,
+                    'price': elem.price
+                    })
+                print(cereals)
+        elif sort_button == 'price_low':
+            result = Cereal.objects.all()
+            cereals = []
+            result = result.order_by('price')
+            for elem in result:
+                print(sort_button)
+                print(result)
+                cereals.append({
+                    'id': elem.id,
+                    'name': elem.name,
+                    'description': elem.description,
+                    'firstImage': elem.cerealimage_set.first().image,
+                    'price': elem.price
+                    })
+        elif sort_button == 'price_high':
+            result = Cereal.objects.all()
+            cereals = []
+            result = result.order_by('-price')
+            for elem in result:
+                print(sort_button)
+                print(result)
+                cereals.append({
+                    'id': elem.id,
+                    'name': elem.name,
+                    'description': elem.description,
+                    'firstImage': elem.cerealimage_set.first().image,
+                    'price': elem.price
+                    })
+        return JsonResponse({'data': cereals})
+
     if 'search_filter' in request.GET:
         search_filter = request.GET['search_filter']
         cereals = [{
