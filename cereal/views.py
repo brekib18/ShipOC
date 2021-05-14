@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404, redirect
 from django.http import JsonResponse
-from cart.models import Cart
+
+
 from django.contrib.auth.decorators import login_required
 
 from cereal.forms.cereal_form import CerealCreateForm, CerealUpdateForm

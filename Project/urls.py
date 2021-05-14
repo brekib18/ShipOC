@@ -27,7 +27,8 @@ urlpatterns = [
     path('contactus/', include('contact.urls')),
     path('chat/',include('chat.urls')),
     path('favorites/',include('favorites.urls')),
-    path('cart/',include('cart.urls')),
     path('login/',include('login.urls')),
-    path('user/',include('user.urls'))
+    path('user/',include('user.urls')),
+    path('shopping_cart/', include('shopcart.urls')),
+    path('payment/', include('payment.urls'))
 ]

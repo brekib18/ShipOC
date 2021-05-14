@@ -8,7 +8,7 @@
         <img src="{{ cereal_image.image }}" class="product-img"/>
     {% endfor %}
 
-    <button>Add to cart</button>
+    <a href="{% url 'add_to_cart' cereal.id %}" class = "button add-button">Add to cart</a>
     <button>Add to favorites</button>
 
 

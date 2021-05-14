@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="cart">
+    <h2 class="cart-heading">Hello, welcome to your cart!</h2>
+    <div class="products">
+        {% if not items%}
+            <p>Your cart is empty.</p>
+        {% else %}
+            {% for item in items %}
+                {% include 'shopcart/cart_prod.html' with cart_prod=item %}
+            {% endfor %}
+        {% endif %}
+    </div>
+
+    <div class="carttotal-container">
+        {% if not items%}
+            <a href="/" class="button normal-button">Start shopping</a>
+        {% else %}
+        <br><br>
+            <span class="cart-total">Total Price: {{totalprice}} ISK</span>
+            <a href="{% url 'payment-billing_address' %}" class="button buy-button">Buy products</a>
+
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

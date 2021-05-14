@@ -14,8 +14,13 @@
     <script src="{% static 'js/accessories.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
     <script src="{% static 'js/chat-btn.js' %}?2"></script>
+
     <script src="{% static 'js/cart-btn.js' %}"></script>
     <script src="{% static 'js/filter.js' %}"></script>
+    <script src="{% static 'js/payment.js' %}"></script>
+
+    <script type="text/javascript"> var user = '{{ request.user }}'</script>
+
 
 </head>
 <body>
@@ -29,6 +34,6 @@
 
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+    <script type="text/javascript" src="{% static 'js/cart.js' %}"></script>
 </body>
 </html>

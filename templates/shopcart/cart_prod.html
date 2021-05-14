@@ -1,0 +1,9 @@
+<div class="well item cart-item">
+    <a class="product-link" href="/cereals/{{ cart_prod.cereal.id }}">
+        <img class="product-img" src="{{cart_prod.cereal.cerealimage_set.all}}"/>
+        <span class="product-name">{{cart_prod.cereal.name}}</span>
+    </a>
+    <span class="product-field"><strong>Price:</strong> {{cart_prod.cereal.price}} ISK</span>
+    <span class-="product-field"><strong>Quantity:</strong> {{cart_prod.quantity}}</span>
+    <a href="{% url 'delete_from_cart' cart_prod.cereal.id%}" class = "button delete-button"> Delete item from cart </a>
+</div>
