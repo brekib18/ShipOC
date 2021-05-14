@@ -92,6 +92,12 @@ a {
     margin-top: 25px;
 }
 
+#chat-btn{
+    display: inline-block;
+    float: right;
+    margin-top: 5px;
+}
+
 .portrait {
     height: 300px;
     width: 300px;
@@ -146,7 +152,7 @@ a {
     padding-right: 20px;
 }
 
-.chat{
+#chat{
     background-color: white;
     display: inline-block;
     position: absolute;
@@ -173,12 +179,13 @@ a {
     border-top: 2px solid black;
 }
 
-.chat_input{
+#chat_input{
     width: 80%;
     background-color: lightgray;
     padding: 10px;
     border: 0px;
     display: inline-block;
+
 }
 
 .chat_message{
@@ -188,11 +195,30 @@ a {
     border-radius: 20px;
     padding: 10px;
 }
+
+.chat_response{
+    background-color: lightblue;
+    margin: 10px;
+    border-radius: 20px;
+    padding: 10px;
+    display: block;
+    width: 50%;
+
+}
 /*.chat_footer{*/
 /*    position: absolute;*/
 /*    bottom: 0px;*/
 /*    background-color: gray;*/
 /*}*/
+
+.service{
+    background-color: lightgray;
+    border-radius: 20px;
+    padding: 10px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 10px;
+}
 
 
 .hyplinks_navdown:hover {
