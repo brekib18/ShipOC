@@ -10,6 +10,10 @@
     <button>Add to cart</button>
     <button>Add to favorites</button>
 
+
+    {% if user.is_superuser %}
     <a href="{% url 'delete_book' book.id %}" class="block btn btn-primary">Delete book</a>
     <a href="{% url 'update_book' book.id %}" class="block btn btn-primary">Update book</a>
+    {% endif %}
+
 {% endblock %}

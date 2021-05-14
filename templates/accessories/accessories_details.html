@@ -11,8 +11,11 @@
     <button>Add to cart</button>
     <button>Add to favorites</button>
 
+
+    {% if user.is_superuser %}
     <a href="{% url 'delete_accessories' accessories.id %}" class="block btn btn-primary">Delete accessories</a>
     <a href="{% url 'update_accessories' accessories.id %}" class="block btn btn-primary">Update accessories</a>
+    {% endif %}
 
 
 {% endblock %}

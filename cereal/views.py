@@ -48,18 +48,11 @@ def get_cereal_by_id(request, id):
     })
 
 
-<<<<<<< Updated upstream
+
 @login_required
 def create_cereal(request):
     if not request.user.is_superuser:
         return redirect('cereal-index')
-=======
-@login_required()
-def create_cereal(request):
-    if not request.user.is_superuser:
-        get_object_or_404(Cereal,pk=id)
-        return redirect('/cereals')
->>>>>>> Stashed changes
     if request.method == 'POST':
         form = CerealCreateForm(data=request.POST)
         if form.is_valid():
@@ -75,32 +68,20 @@ def create_cereal(request):
     })
 
 
-<<<<<<< Updated upstream
+
 
 @login_required
-=======
-@login_required()
->>>>>>> Stashed changes
 def delete_cereal(request, id):
-    if not request.user.is_superuser:
-        get_object_or_404(Cereal,pk=id)
-        return redirect('/cereals')
     cereal = get_object_or_404(Cereal, pk=id)
     if not request.user.is_superuser:
         return redirect('cereal-index')
     cereal.delete()
     return redirect('cereal-index')
 
-<<<<<<< Updated upstream
+
 
 @login_required
-=======
-@login_required()
->>>>>>> Stashed changes
 def update_cereal(request, id):
-    if not request.user.is_superuser:
-        get_object_or_404(Cereal,pk=id)
-        return redirect('/cereals')
     instance = get_object_or_404(Cereal, pk=id)
     if not request.user.is_superuser:
         return redirect('cereal-index')
