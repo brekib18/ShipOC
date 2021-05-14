@@ -31,9 +31,8 @@ def index(request):
                 'category': True
 
             }
-        return render(request, 'cereal/filter_index.html', context)
+        return JsonResponse({'data': context})#render(request, 'cereal/index.html', context)
     if 'search_filter' in request.GET:
-        print('hallohallo')
         search_filter = request.GET['search_filter']
         cereals = [{
             'id': x.id,

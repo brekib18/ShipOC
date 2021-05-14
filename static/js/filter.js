@@ -1,15 +1,12 @@
 $(document).ready(function(){
-    $('.game_type').on('change', function (e) {
+    $('.cereal_type_filter').on('click', function (e) {
+        console.log(this.href)
         e.preventDefault();
-        var radio_value = this.value
-        console.log(radio_value)
         $.ajax( {
-            url: '/cereals?filter=' + radio_value,
+            url: this.href,
             type: 'GET',
-
             success: function(res){
                 console.log('her erum vid2')
-                console.log(res)
                 var newHtml = res.data.map(d => {
 
                     return `<div class="well candy">

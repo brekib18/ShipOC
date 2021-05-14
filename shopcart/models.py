@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from cereal.models import Cereal
 
+
 # Create your models here.
 class Cart(models.Model):
     user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
