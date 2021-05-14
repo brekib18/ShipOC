@@ -7,9 +7,16 @@ $(document).ready(function(){
             type: 'GET',
             success: function(res){
                 console.log("this is res.data"+res.data.map)
+                console.log(res.data)
                 console.log("haha")
                 var newHtml = res.data.map(d => {
-                    return res.data
+                    return `<div class="well candy">
+                            <a href="/cereals/${d.id}">
+                                <img class="product-img" src="${d.firstImage}" />
+                                <h4>${d.name}</h4>
+                                <p>${d.description}</p>
+                            </a>
+                    </div>`
                 });
                 $('.cereals').html(newHtml.join(''));
                 $('search-box').val('');

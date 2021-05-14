@@ -26,15 +26,20 @@ def index(request):
 
     if 'filter' in request.GET:
         filter_by_cat = request.GET['filter']
-        cereals = [{
-            'id': x.id,
-            'cat_id': x.cereal_category_id,
-            'name': x.name,
-            'description': x.description,
-            'firstImage': x.cerealimage_set.first().image
-        } for x in Cereal.objects.filter(cat_id=filter_by_cat)]
+        result = Cereal.objects.all()
+        cereals = []
+        for elem in result:
+            print(filter_by_cat)
+            print(elem.cereal_category_id.id)
+            if str(elem.cereal_category_id.id) == str(filter_by_cat):
+                print('jladjflæa')
+                cereals.append({
+                    'id': elem.id,
+                    'name': elem.name,
+                    'description': elem.description,
+                    'firstImage': elem.cerealimage_set.first().image
+                })
         return JsonResponse({'data': cereals})
-        context = {'cereals': Cereal.objects.all().order_by('cereal_category_id')}
     return render(request, 'cereal/index.html', context)
 
 
