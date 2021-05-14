@@ -2,7 +2,7 @@
 {% block content %}
 
 <div class="cart">
-    <h2 class="cart-heading">Hello, welcome to your cart!</h2>
+    <h2 class="cart-heading"> Below is your cart: </h2>
     <div class="products">
         {% if not items%}
             <p>Your cart is empty.</p>
@@ -15,7 +15,7 @@
 
     <div class="carttotal-container">
         {% if not items%}
-            <a href="/" class="button normal-button">Start shopping</a>
+            <a href="/" class="button normal-button"> Go shopping! </a>
         {% else %}
         <br><br>
             <span class="cart-total">Total Price: {{totalprice}} ISK</span>
