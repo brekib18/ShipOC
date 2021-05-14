@@ -36,7 +36,8 @@ def index(request):
                     'id': elem.id,
                     'name': elem.name,
                     'description': elem.description,
-                    'firstImage': elem.cerealimage_set.first().image
+                    'firstImage': elem.cerealimage_set.first().image,
+                    'price': elem.price
                 })
             elif str(filter_by_cat) == "all":
                 cereals.append({
