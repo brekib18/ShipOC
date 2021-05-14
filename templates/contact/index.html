@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
- <div>
+ <div id="contact_container">
     <header class="info_headers"> Contact us </header>
     <div id="contain_contact">
         <p id='firstText'> Fill out the following information: </p>
@@ -12,7 +12,7 @@
         <input type="text" class="inputField2" placeholder="How can we help you? *">
         <div class="buttons">
             <button class="back" onclick="goBack()"> Cancel </button>
-            <button class="send" onclick="sendMessage()"> Send message </button>
+            <button id="send" onclick="sendMessage()"> Send message </button>
         </div>
     </div>
 

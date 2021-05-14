@@ -287,7 +287,14 @@ a {
     margin-top: 30%;
     height: 200px;
 }
-
+.contact{
+    background-color: lightblue;
+    font-size: 50px;
+    border: 5px solid black;
+    position: absolute;
+    top: 0px;
+    height: 500px;
+}
 
 .login{
     background-color: white;

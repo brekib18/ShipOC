@@ -13,7 +13,6 @@ $(document).ready(function(){
 function myClick(){
     setTimeout(
         function (){
-            console.log('timeour')
             var service = document.createElement('div');
             service.className = "service"
             service.textContent = "We will answer you soon."
