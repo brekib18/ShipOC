@@ -1,13 +1,22 @@
 $(document).ready(function(){
     $('#chat-btn').on('click', function(e) {
         e.preventDefault();
-        var message = $('.chat_input').val();
-        console.log('+Eg ýtti á takkann');
-        $.ajax({
-            url: '/chat/',
+        input_val = document.getElementById('chat_input').value
 
-        })
-        $('.chat_response').appendChild(message);
     })})
+
+
+// console.log('bla')
+// btn = document.getElementById('chat-btn')
+// input = document.getElementsByClassName('chat_input')
+// console.log(input)
+// console.log('blabal')
+//
+// function chat(){
+//     input.addEventListener("keydown",event=>{
+//         if (event.keyCode == 13){
+//             console.log('13')
+//         }
+// })}
 
 

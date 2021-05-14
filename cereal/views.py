@@ -12,6 +12,7 @@ from cereal.models import Cereal, CerealImage
 
 def index(request):
     if 'search_filter' in request.GET:
+        print('hallohallo')
         search_filter = request.GET['search_filter']
         cereals = [{
             'id': x.id,
@@ -33,9 +34,9 @@ def filter_index(request):
             'name': x.name,
             'description': x.description,
             'firstImage': x.cerealimage_set.first().image
-        } for x in Cereal.objects.filter(cat_id__icontains=filter_by_cat)]
+        } for x in Cereal.objects.filter(cereal_category_id=filter_by_cat)]
         return JsonResponse({'data': cereals})
-    context = {'cereals': Cereal.objects.all().order_by('cat_id')}
+    context = {'cereals': Cereal.objects.all().order_by('cereal_category_id')}
     return render(request, 'cereal/filter_index.html', context)
 
 

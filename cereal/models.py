@@ -18,7 +18,8 @@ class Cereal(models.Model):
     category_id = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.name
+        a = str(self.cereal_category_id)
+        return a
 
 
 class CerealImage(models.Model):

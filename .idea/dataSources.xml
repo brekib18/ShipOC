@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:postgresql://34.123.129.175:5432/shipOC-db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="shipOC-db@34.123.129.175" uuid="3c57bc66-03d7-436a-b5c5-105887932818">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://34.123.129.175:5432/shipOC-db</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
