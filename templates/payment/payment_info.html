@@ -2,7 +2,11 @@
 {% block content %}
 <br><br>
 <h1> Payment - fill in your information: </h1><br>
-<form id="payment-info-form" class="payment-row" >
+<form method="post" class="form form-horizontal">
+    {% csrf_token %}
+     {{ form }}
+</form>
+<!--<form id="payment-info-form" class="payment-row" >
     <div class="col-50">
         <div class="container-payment">
 
@@ -19,7 +23,7 @@
             <label for="cvc"> CVC : </label>
             <input required type="text" id="cvc" name="cvc" placeholder=""><br>
           </div>
-        </div>
+        </div> -->
     <hr>
     <div class="col-50">
         <div class="container-cart-items">
