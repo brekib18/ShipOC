@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('.radio').on('change', function (e) {
+    $('.game_type').on('change', function (e) {
         e.preventDefault();
         var radio_value = this.value
         console.log(radio_value)

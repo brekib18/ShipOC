@@ -13,7 +13,7 @@ class AccessoriesCategory(models.Model):
 
 class Accessories(models.Model):
     name = models.CharField(max_length=255)
-    description = models.CharField(max_length=255,blank=True)
+    description = models.CharField(max_length=999,blank=True)
     category = models.ForeignKey(Category,on_delete=models.CASCADE)
     price = models.IntegerField()
 
