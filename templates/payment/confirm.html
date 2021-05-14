@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+    <br>
+    <h1>Your order from Ship O´ Cereal is now complete. </h1>
+    <br>
+    <h2>Thank you for shopping with us. We hope to see you again soon! </h2>
+    <hr>
+    <h4>You can view your order here below: </h4>
+    <br>
+    {% for item in items %}
+        <img class ="payment-img" src="{{item.cerealimage_set.first.image}}"/>
+        <p><a href="/cereal/{{item.id}}" class="cart-items">{{item.name}} : </a>
+        <span class="price">{{item.price}} ISK</span></p>
+    {% endfor %}
+    <hr>
+    <a href="/" class = "button normal-button"> Go back to home page </a>
+{% endblock %}

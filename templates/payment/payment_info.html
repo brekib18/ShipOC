@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+<br><br>
+<h1> Payment - fill in your information: </h1><br>
+<form id="payment-info-form" class="payment-row" >
+    <div class="col-50">
+        <div class="container-payment">
+
+
+            <hr>
+            <label for="cname">Card name : </label>
+            <input required type="text" id="cname" name="cardname" placeholder=""><br>
+            <label for="ccnum">Card number : </label>
+            <input required type="text" id="ccnum" name="cardnumber" placeholder=""><br>
+            <label for="expmonth">Expiry Month : </label>
+            <input required type="text" id="expmonth" name="expmonth" placeholder=""><br>
+            <label for="expyear">Expiry Year : </label>
+            <input required type="text" id="expyear" name="expyear" placeholder=""><br>
+            <label for="cvc"> CVC : </label>
+            <input required type="text" id="cvc" name="cvc" placeholder=""><br>
+          </div>
+        </div>
+    <hr>
+    <div class="col-50">
+        <div class="container-cart-items">
+            <h4 style="color:black"> Items in Cart
+                <span class="price" style="color:black">
+                    <i class="fa fa-shopping-cart"style="color:black"></i>
+                </span>
+                {{itemcount}}
+            </h4>
+            {% for item in items %}
+                <p><a href="/cereals/{{item.id}}" class="cart-items">
+                    {{item.name}}</a>
+                    <span class="price">{{item.price}} ISK</span></p>
+            {% endfor %}
+            <hr>
+            <h4 style="color:black"> Total Price: {{totalprice}} ISK</h4>
+            <hr>
+            <a href="/payment/billing/" class = "button normal-button"> Back </a>
+            <button type="submit" class = "button buy-button"> Continue </button>
+        </div>
+    </div>
+</form>
+{% endblock %}
