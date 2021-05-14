@@ -1,21 +1,15 @@
 $(document).ready(function(){
-    $('.cereal_type_filter').on('click', function (e) {
-        console.log(this.href)
+    $('.filter_button').on('click', function (e) {
+        console.log(this.value)
         e.preventDefault();
         $.ajax( {
-            url: this.href,
+            url: '/cereals?filter='+this.value,
             type: 'GET',
             success: function(res){
-                console.log('her erum vid2')
+                console.log("this is res.data"+res.data.map)
+                console.log("haha")
                 var newHtml = res.data.map(d => {
-
-                    return `<div class="well candy">
-                            <a href="/cereals/${d.id}">
-                                <img class="product-img" src="${d.firstImage}" />
-                                <h4>${d.name}</h4>
-                                <p>${d.description}</p>
-                            </a>
-                    </div>`
+                    return res.data
                 });
                 $('.cereals').html(newHtml.join(''));
                 $('search-box').val('');
