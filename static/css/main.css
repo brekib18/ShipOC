@@ -330,5 +330,7 @@ a {
     margin-right: 7px;
 }
 
-
+.filter_button{
+    display: block;
+}
 
