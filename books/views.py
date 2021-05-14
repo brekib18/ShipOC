@@ -11,6 +11,51 @@ from django.contrib.auth.decorators import login_required
 
 
 def index(request):
+    if 'sort_button' in request.GET:
+
+        sort_button = request.GET['sort_button']
+
+        if sort_button == 'alphabetical':
+            print('alpha')
+            result = Books.objects.all()
+            books = []
+            result = result.order_by('name')
+            for elem in result:
+
+                books.append({
+                    'id': elem.id,
+                    'name': elem.name,
+                    'description': elem.description,
+                    'firstImage': elem.booksimage_set.first().image,
+                    'price': elem.price
+                    })
+        elif sort_button == 'price_low':
+            result = Books.objects.all()
+            books = []
+            result = result.order_by('price')
+            for elem in result:
+
+                books.append({
+                    'id': elem.id,
+                    'name': elem.name,
+                    'description': elem.description,
+                    'firstImage': elem.booksimage_set.first().image,
+                    'price': elem.price
+                    })
+        elif sort_button == 'price_high':
+            result = Books.objects.all()
+            books = []
+            result = result.order_by('-price')
+            for elem in result:
+
+                books.append({
+                    'id': elem.id,
+                    'name': elem.name,
+                    'description': elem.description,
+                    'firstImage': elem.booksimage_set.first().image,
+                    'price': elem.price
+                    })
+        return JsonResponse({'data': books})
     if 'search_filter' in request.GET:
         search_filter = request.GET['search_filter']
         books = [{

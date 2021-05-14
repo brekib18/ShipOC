@@ -25,5 +25,4 @@ $(document).ready(function(){
         })
     });
 });
-console.log('ksjd')
 

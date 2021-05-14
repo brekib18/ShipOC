@@ -1,6 +1,5 @@
 $(document).ready(function(){
     $('.sort_button').on('click', function (e) {
-        console.log(this.value)
         e.preventDefault();
         $.ajax( {
             url: '/accessories?sort_button='+this.value,
@@ -8,7 +7,6 @@ $(document).ready(function(){
             success: function(res){
 
                 var newHtml = res.data.map(d => {
-                    console.log(d.name)
                     return `<div class="well_cereal">
                             <a href="/accessories/${d.id}">
                                 <img class="product-img" src="${d.firstImage}" />
@@ -26,4 +24,5 @@ $(document).ready(function(){
             }
             });
         });})
+
 
