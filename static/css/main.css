@@ -133,7 +133,9 @@ a {
     width: 30px;
 }
 
-
+.icons{
+    margin-top: 30%;
+}
 .cartbutton {
     height: 30px;
     width: 30px;
@@ -282,6 +284,7 @@ a {
 }
 
 .book_image{
+    margin-top: 30%;
     height: 200px;
 }
 
