@@ -1,9 +1,9 @@
 from django.shortcuts import render
-from accessories.models import Accessories
 from django.shortcuts import get_object_or_404, redirect
 from django.http import JsonResponse
 from accessories.forms.accessories_form import AccessoriesCreateForm, AccessoriesUpdateForm
 from accessories.models import Accessories, AccessoriesImage
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -27,7 +27,10 @@ def get_accessories_by_id(request,id):
     })
 
 
+@login_required
 def create_accessories(request):
+    if not request.user.is_superuser:
+        return redirect('accessories-index')
     if request.method == 'POST':
         form = AccessoriesCreateForm(data=request.POST)
         if form.is_valid():
@@ -43,15 +46,20 @@ def create_accessories(request):
     })
 
 
-
+@login_required
 def delete_accessories(request, id):
     accessories = get_object_or_404(Accessories, pk=id)
+    if not request.user.is_superuser:
+        return redirect('accessories-index')
     accessories.delete()
     return redirect('accessories-index')
 
 
+@login_required
 def update_accessories(request, id):
     instance = get_object_or_404(Accessories, pk=id)
+    if not request.user.is_superuser:
+        return redirect('accessories-index')
     if request.method == 'POST':
         form = AccessoriesUpdateForm(data=request.POST, instance=instance)
         if form.is_valid():

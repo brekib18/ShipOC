@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import get_object_or_404, redirect
 from django.http import JsonResponse
 from cart.models import Cart
+from django.contrib.auth.decorators import login_required
 
 from cereal.forms.cereal_form import CerealCreateForm, CerealUpdateForm
 from cereal.models import Cereal, CerealImage
@@ -47,8 +48,10 @@ def get_cereal_by_id(request, id):
     })
 
 
-
+@login_required
 def create_cereal(request):
+    if not request.user.is_superuser:
+        return redirect('cereal-index')
     if request.method == 'POST':
         form = CerealCreateForm(data=request.POST)
         if form.is_valid():
@@ -65,14 +68,20 @@ def create_cereal(request):
 
 
 
+@login_required
 def delete_cereal(request, id):
     cereal = get_object_or_404(Cereal, pk=id)
+    if not request.user.is_superuser:
+        return redirect('cereal-index')
     cereal.delete()
     return redirect('cereal-index')
 
 
+@login_required
 def update_cereal(request, id):
     instance = get_object_or_404(Cereal, pk=id)
+    if not request.user.is_superuser:
+        return redirect('cereal-index')
     if request.method == 'POST':
         form = CerealUpdateForm(data=request.POST, instance=instance)
         if form.is_valid():

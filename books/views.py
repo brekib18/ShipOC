@@ -6,6 +6,7 @@ from books.forms.book_form import BookUpdateForm
 from books.models import Books, BooksImage
 from django.shortcuts import get_object_or_404, redirect
 from django.http import JsonResponse
+from django.contrib.auth.decorators import login_required
 
 
 
@@ -29,7 +30,11 @@ def get_book_by_id(request, id):
     })
 
 
+
+@login_required
 def create_book(request):
+    if not request.user.is_superuser:
+        return redirect('books-index')
     if request.method == 'POST':
         form = BookCreateForm(data=request.POST)
         if form.is_valid():
@@ -44,14 +49,23 @@ def create_book(request):
         'form': form
     })
 
+
+
+@login_required
 def delete_book(request, id):
     book = get_object_or_404(Books, pk=id)
+    if not request.user.is_superuser:
+        return redirect('books-index')
     book.delete()
     return redirect('books-index')
 
 
+
+@login_required
 def update_book(request, id):
     instance = get_object_or_404(Books, pk=id)
+    if not request.user.is_superuser:
+        return redirect('books-index')
     if request.method == 'POST':
         form = BookUpdateForm(data=request.POST, instance=instance)
         if form.is_valid():

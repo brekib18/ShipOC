@@ -2,9 +2,11 @@ from django.shortcuts import render
 from clothes.models import Clothes
 from django.shortcuts import get_object_or_404, redirect
 from django.http import JsonResponse
-
+from django.contrib.auth.decorators import login_required
 from clothes.forms.clothes_form import ClothesCreateForm, ClothesUpdateForm
 from clothes.models import Clothes, ClothesImage
+
+
 
 def index(request):
     if 'search_filter' in request.GET:
@@ -20,6 +22,8 @@ def index(request):
     return render(request, 'clothes/index.html', context)
 
 
+
+
 def get_clothes_by_id(request,id):
     return render(request,'clothes/clothes_details.html',{
         'clothes': get_object_or_404(Clothes, pk=id)
@@ -27,8 +31,10 @@ def get_clothes_by_id(request,id):
 
 
 
-
+@login_required
 def create_clothes(request):
+    if not request.user.is_superuser:
+        return redirect('clothes-index')
     if request.method == 'POST':
         form = ClothesCreateForm(data=request.POST)
         if form.is_valid():
@@ -44,15 +50,21 @@ def create_clothes(request):
     })
 
 
-
+@login_required
 def delete_clothes(request, id):
     clothes = get_object_or_404(Clothes, pk=id)
+    if not request.user.is_superuser:
+        return redirect('clothes-index')
     clothes.delete()
     return redirect('clothes-index')
 
 
+
+@login_required
 def update_clothes(request, id):
     instance = get_object_or_404(Clothes, pk=id)
+    if not request.user.is_superuser:
+        return redirect('clothes-index')
     if request.method == 'POST':
         form = ClothesUpdateForm(data=request.POST, instance=instance)
         if form.is_valid():
